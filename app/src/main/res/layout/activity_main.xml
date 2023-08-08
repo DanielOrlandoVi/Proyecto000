@@ -70,15 +70,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:ems="10"
+                    android:ems="20"
                     android:hint="dd/mm/aaaa"
-                    android:inputType="text" />
+                    android:inputType="date" />
 
                 <EditText
                     android:id="@+id/txtLocalidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
+                    android:ems="20"
                     android:hint="Ej. Suba, Usaquén"
                     android:inputType="text" />
 
@@ -86,7 +86,7 @@
                     android:id="@+id/txtBarrio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
+                    android:ems="20"
                     android:hint="Ej. Mirandela"
                     android:inputType="text" />
             </LinearLayout>
@@ -97,14 +97,35 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="127dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnGuardar"
+        <EditText
+            android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Guardar" />
+            android:layout_height="match_parent"
+            android:ems="500"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"/>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="guardar"
+        android:text="Guardar" />
 </LinearLayout>
