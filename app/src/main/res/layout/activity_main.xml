@@ -1,131 +1,506 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:scrollbars="vertical"
+    tools:context=".MainActivity"
+    >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/ViewTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:gravity="center"
-            android:text="FORMULARIO DE REGISTRO"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="24sp" />
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="111dp"
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right">
+
+            <TextView
+                android:id="@+id/ViewTitulo"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/ViewFecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="Fecha:"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/ViewLocalidad"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Localidad:"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/ViewBarrio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Barrio:"
-                    android:textSize="18sp" />
-            </LinearLayout>
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="FORMULARIO DE REGISTRO"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/txtFecha"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:ems="20"
-                    android:hint="dd/mm/aaaa"
-                    android:inputType="date" />
+                <LinearLayout
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/txtLocalidad"
+                    <TextView
+                        android:id="@+id/ViewFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="Fecha:"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewLocalidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Localidad:"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewBarrio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Barrio:"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewIDdiseño"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="ID Diseño: "
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="20"
-                    android:hint="Ej. Suba, Usaquén"
-                    android:inputType="text" />
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/txtBarrio"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="20"
-                    android:hint="Ej. Mirandela"
-                    android:inputType="text" />
+                    <EditText
+                        android:id="@+id/txtFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:ems="20"
+                        android:hint="dd/mm/aaaa"
+                        android:inputType="date" />
+
+                    <EditText
+                        android:id="@+id/txtLocalidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="20"
+                        android:hint="Ej. Suba, Usaquén"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtBarrio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="20"
+                        android:hint="Ej. Mirandela"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtIDdiseno"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="EX_**_**_**_**"
+                        android:inputType="text" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="127dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical">
-
-        <EditText
-            android:id="@+id/txtDescripcion"
+        <!--Aquí va el registro fotográfico de la fachada-->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="500"
-            android:inputType="textMultiLine"
-            android:scrollbars="vertical"/>
+            android:layout_height="wrap_content"
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical">
+            android:orientation="vertical">
 
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/ViewFotofachada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="1. Registro fotográfico de la fachada:"
+                android:textSize="18sp" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="guardar"
-        android:text="Guardar" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/ViewDatospredio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="2. Datos del predio:"
+                android:textSize="18sp" />
+
+
+            <!--layout horizontal adentro de datos predio-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--dos layout vertical adentro del horizontal-->
+
+                <!--en este primero los textView-->
+                <LinearLayout
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/ViewPropietariopredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Propietario:"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewTelefonopredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Teléfono:"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewCorreopredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Correo:"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewDireccionpredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Dirección:"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <!--en este segundo los EditText-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/txtPropietariopredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="20"
+                        android:hint="Ej. Juan Carlos Hurtado Betancourt"
+                        android:inputType="text"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/txtTelefonopredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Ej. 300 *** ***"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtCorreopredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="ejemplo@gmail.com"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/txtDireccionpredio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Ej. Car. 00A#00B-00"
+                        android:inputType="text" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <!--GUIA-->
+            <!--layout horizontal para contener checkbox-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--tres layout vertical para views, checked y unchecked-->
+
+                <!--layout views-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ViewAgua"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="1. Agua"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewAlcantarillado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="2. Alcantarillado"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewEnergia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="3. Energía"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewTelefonos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="4. Teléfonos"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewGas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="5. Gas"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewTics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="6. TICS"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/ViewLconstruccion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="7. Lic.Construcción"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+
+                <!--layout Checked-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/AguaSi"
+                        android:layout_width="81dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Sí" />
+
+                    <CheckBox
+                        android:id="@+id/AlcantarilladoSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí" />
+
+                    <CheckBox
+                        android:id="@+id/EnergiaSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí" />
+
+                    <CheckBox
+                        android:id="@+id/TelefonosSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí" />
+
+                    <CheckBox
+                        android:id="@+id/GasSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí" />
+
+                    <CheckBox
+                        android:id="@+id/TicsSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí" />
+
+                    <CheckBox
+                        android:id="@+id/LconstruccionSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí" />
+
+                </LinearLayout>
+
+
+                <!--layout Unchecked-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/AguaNo"
+                        android:layout_width="71dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="No" />
+
+                    <CheckBox
+                        android:id="@+id/AlcantarilladoNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+
+                    <CheckBox
+                        android:id="@+id/EnergiaNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+
+                    <CheckBox
+                        android:id="@+id/TelefonosNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+
+                    <CheckBox
+                        android:id="@+id/GasNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+
+                    <CheckBox
+                        android:id="@+id/TicsNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+
+                    <CheckBox
+                        android:id="@+id/LconstruccionNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="127dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="111dp"
+                android:ems="500"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnGuardaryactualizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="guardaryactualizar"
+                android:text="Actualizar texto con nuevos datos" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnGuardar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="guardar"
+                android:text="Guardar" />
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
+
