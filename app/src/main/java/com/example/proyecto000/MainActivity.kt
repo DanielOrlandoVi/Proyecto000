@@ -3,7 +3,6 @@ package com.example.proyecto000
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
@@ -19,24 +18,37 @@ class MainActivity : AppCompatActivity() {
     var txtTelefonopredio: EditText?=null
     var txtCorreopredio: EditText?=null
     var txtDireccionpredio: EditText?=null
+    var txtOtrouso: EditText?=null
     var txtDescripcion: EditText?=null
 
+
     // Definir la variable checkboxes como una propiedad de la actividad
-    /*private lateinit var checkboxes: Array<CheckBox>
-    val AguaSi = findViewById<CheckBox>(R.id.AguaSi)
-    val AguaNo = findViewById<CheckBox>(R.id.AguaNo)
-    val AlcantarilladoSi = findViewById<CheckBox>(R.id.AlcantarilladoSi)
-    val AlcantarilladoNo = findViewById<CheckBox>(R.id.AlcantarilladoNo)
-    val EnergiaSi = findViewById<CheckBox>(R.id.EnergiaSi)
-    val EnergiaNo = findViewById<CheckBox>(R.id.EnergiaNo)
-    val TelefonosSi = findViewById<CheckBox>(R.id.TelefonosSi)
-    val TelefonosNo = findViewById<CheckBox>(R.id.TelefonosNo)
-    val GasSi = findViewById<CheckBox>(R.id.GasSi)
-    val GasNo = findViewById<CheckBox>(R.id.GasNo)
-    val TicsSi = findViewById<CheckBox>(R.id.TicsSi)
-    val TicsNO = findViewById<CheckBox>(R.id.TicsNo)
-    val LconstruccionSi = findViewById<CheckBox>(R.id.LconstruccionSi)
-    val LconstruccionNo = findViewById<CheckBox>(R.id.LconstruccionNo)*/
+
+    // Checkboxes servicios
+    private lateinit var estAgua: CheckBox
+    private lateinit var estAlcantarillado: CheckBox
+    private lateinit var estEnergia: CheckBox
+    private lateinit var estTelefonos: CheckBox
+    private lateinit var estGas: CheckBox
+    private lateinit var estTics: CheckBox
+    private lateinit var estLconstruccion: CheckBox
+
+
+    // Checkboxes uso actual del predio
+    private lateinit var estResidencial: CheckBox
+    private lateinit var estComercial: CheckBox
+    private lateinit var estIndustrial: CheckBox
+    private lateinit var estInstitucional: CheckBox
+    private lateinit var estRecreacional: CheckBox
+    private lateinit var estInterescultural: CheckBox
+    private lateinit var estMixto: CheckBox
+    private lateinit var estOtrouso: CheckBox
+
+
+    // Checkboxes uso vehicular
+    private lateinit var estGaraje: CheckBox
+    private lateinit var estUsocomercial: CheckBox
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,17 +62,33 @@ class MainActivity : AppCompatActivity() {
         txtTelefonopredio=findViewById(R.id.txtTelefonopredio)
         txtCorreopredio=findViewById(R.id.txtCorreopredio)
         txtDireccionpredio=findViewById(R.id.txtDireccionpredio)
+        txtOtrouso=findViewById(R.id.txtOtrouso)
         txtDescripcion=findViewById(R.id.txtDescripcion)
 
 
-        //Primero declaremos los checkboxes
+        estAgua=findViewById(R.id.estAgua) //enlazo la variable con el checkbox del layout
+        estAlcantarillado=findViewById(R.id.estAlcantarillado)
+        estEnergia=findViewById(R.id.estEnergia)
+        estTelefonos=findViewById(R.id.estTelefonos)
+        estGas=findViewById(R.id.estGas)
+        estTics=findViewById(R.id.estTics)
+        estLconstruccion=findViewById(R.id.estLconstruccion)
 
 
-        // Inicializar la variable checkboxes con los checkboxes del layout
+        estResidencial=findViewById(R.id.estResidencial)
+        estComercial=findViewById(R.id.estComercial)
+        estIndustrial=findViewById(R.id.estIndustrial)
+        estInstitucional=findViewById(R.id.estInstitucional)
+        estRecreacional=findViewById(R.id.estRecreacional)
+        estInterescultural=findViewById(R.id.estInterescultural)
+        estMixto=findViewById(R.id.estMixto)
+        estOtrouso=findViewById(R.id.estOtrouso)
 
 
-        /*checkboxes = arrayOf(AguaSi, AguaNo, AlcantarilladoSi, AlcantarilladoNo, EnergiaSi, EnergiaNo, TelefonosSi, TelefonosNo,
-            GasSi, GasNo, TicsSi, TicsNO, LconstruccionSi, LconstruccionNo)*/
+        estGaraje=findViewById(R.id.estGaraje)
+        estUsocomercial=findViewById(R.id.estUsocomercial)
+
+
 
 
         var pref= getSharedPreferences("datos_persona", Context.MODE_PRIVATE)//Para indicar que se muestre el mensaje de guardar hasta el final de la actividad
@@ -81,14 +109,74 @@ class MainActivity : AppCompatActivity() {
 
         var direccionpredio= pref.getString("direccionpredio", "")
 
+        var otrouso= pref.getString("otrouso", "")
 
 
-        ///A continuacion vamos a añadirle el texto template a descripción
-        //texto con datos básicos, se edita lo necesario para darle al botón guardar de forma que finalmente la descripción final queda completa y guardada
-        var descripcion = findViewById<EditText>(R.id.txtDescripcion)
-        descripcion.setText("La fecha introducida es _______, la localidad es _______, el barrio es _______ .") //template
 
-        var descripcionfinal = pref.getString("descripcion","") //como descripcion se usa como pivote con el template inicial descripcion final sera donde definitivamente se GUARDE la descripción para mandar al PDF
+        // Las siguientes variables temporales van a ser para que UNICAMENTE en descripcion
+        // por default aparezcan _____ que estan guardados en esas variables temporales
+        //de esta forma las variables que no son temporales muestran VACIO en los edittext y no
+        //más _____
+
+        // Si las variables son null o vacías, se reemplazan con "_" en las variables temporales
+        val fechaTemp = fecha.takeIf { !it.isNullOrEmpty() } ?: "_"
+        val localidadTemp = localidad.takeIf { !it.isNullOrEmpty() } ?: "_"
+        val barrioTemp = barrio.takeIf { !it.isNullOrEmpty() } ?: "_"
+
+        //A continuacion vamos a añadirle el texto template a descripción
+        //texto con datos básicos, se edita lo necesario para darle al botón guardar de forma que finalmente la descripción queda completa y guardada
+        val descripcion = "LaLa fecha introducida es $fechaTemp, la localidad es $localidadTemp, el barrio es $barrioTemp.\""
+
+        //checkboxes servicios
+        val defaultfalse = false //declaro un default en caso de que no se marque nada, en ese caso false
+        val aguestado= pref.getBoolean("aguaestado", defaultfalse) //recupero el valor de aguaestado del shared preferences
+        val alcantarilladoestado= pref.getBoolean("alcantarilladoestado", defaultfalse)
+        val energiaestado= pref.getBoolean("energiaestado", defaultfalse)
+        val telefonosestado= pref.getBoolean("telefonosestado", defaultfalse)
+        val gasestado= pref.getBoolean("gasestado", defaultfalse)
+        val ticsestado= pref.getBoolean("ticsestado", defaultfalse)
+        val lconstruccionestado= pref.getBoolean("lconstruccionestado", defaultfalse)
+
+        //checkboxes uso actual del predio
+
+        val residencialestado= pref.getBoolean("residencialestado", defaultfalse)
+        val comercialestado= pref.getBoolean("comercialestado", defaultfalse)
+        val industrialestado= pref.getBoolean("industrialestado", defaultfalse)
+        val institucionalestado= pref.getBoolean("institucionalestado", defaultfalse)
+        val recreacionalestado= pref.getBoolean("recreacionalestado", defaultfalse)
+        val interesculturalestado= pref.getBoolean("interesculturalestado", defaultfalse)
+        val mixtoestado= pref.getBoolean("mixtoestado", defaultfalse)
+        val otrousoestado= pref.getBoolean("otrousoestado", defaultfalse)
+
+        //checkboxes uso vehicular
+
+        val garajeestado= pref.getBoolean("garajeestado", defaultfalse)
+        val usocomercialestado= pref.getBoolean("usocomercialestado",defaultfalse)
+
+
+
+
+        //muestro en pantalla los checkboxes para ver si se guardo correctamente
+        estAgua.setChecked(aguestado)
+        estAlcantarillado.setChecked(alcantarilladoestado)
+        estEnergia.setChecked(energiaestado)
+        estTelefonos.setChecked(telefonosestado)
+        estGas.setChecked(gasestado)
+        estTics.setChecked(ticsestado)
+        estLconstruccion.setChecked(lconstruccionestado)
+
+        estResidencial.setChecked(residencialestado)
+        estComercial.setChecked(comercialestado)
+        estIndustrial.setChecked(industrialestado)
+        estInstitucional.setChecked(institucionalestado)
+        estRecreacional.setChecked(recreacionalestado)
+        estInterescultural.setChecked(interesculturalestado)
+        estMixto.setChecked(mixtoestado)
+        estOtrouso.setChecked(otrousoestado)
+
+        estGaraje.setChecked(garajeestado)
+        estUsocomercial.setChecked(usocomercialestado)
+
 
         txtFecha?.setText(fecha) //controlador de fecha para que se muestre en pantalla
 
@@ -106,10 +194,10 @@ class MainActivity : AppCompatActivity() {
 
         txtDireccionpredio?.setText(direccionpredio)
 
+        txtOtrouso?.setText(otrouso)
 
-        txtDescripcion?.setText(descripcionfinal) //activar este metodo para ver si se guarda descripcionfinal
-
-
+        //persistencia de descripcion
+        txtDescripcion?.setText(descripcion)
 
 
     }
@@ -117,7 +205,9 @@ class MainActivity : AppCompatActivity() {
         var pref=getSharedPreferences("datos_persona", Context.MODE_PRIVATE) //aquí vamos a guardar los datos en la llave principal datos_persona de forma privada
         var editor=pref.edit() //creamos una variable editor en la que indicamos que vamos a editar lo que haya en pref
 
-        //primero guardamos los datos base
+
+
+        //Guardado de los datos base
         editor.putString("fecha", txtFecha?.text.toString()) //ahora si en editor vamos a guardar los datos en este caso fecha primero el nombre de donde queremos guardar y luego la ubicacion y el como se quiere guardar (txt)
         editor.putString("localidad", txtLocalidad?.text.toString())
         editor.putString("barrio", txtBarrio?.text.toString())
@@ -126,20 +216,66 @@ class MainActivity : AppCompatActivity() {
         editor.putString("telefonopredio", txtTelefonopredio?.text.toString())
         editor.putString("correopredio", txtCorreopredio?.text.toString())
         editor.putString("direccionpredio", txtDireccionpredio?.text.toString())
+        editor.putString("otrouso", txtOtrouso?.text.toString())
 
-        //guardemos los datos de los checkboxes
-        /*for (i in checkboxes.indices) {
-            val id = checkboxes[i].id
-            val isChecked = pref.getBoolean("checkbox_$id", false)
-            Log.d("Checkbox", "ID: $id, Estado: $isChecked")
-        }*/
+
+        // Guardado de estado Checkboxes
+        val aguaestado= estAgua.isChecked
+        val alcantarilladoestado= estAlcantarillado.isChecked
+        val energiaestado= estEnergia.isChecked
+        val telefonosestado= estTelefonos.isChecked
+        val gasestado= estGas.isChecked
+        val ticsestado= estTics.isChecked
+        val lconstruccionestado= estLconstruccion.isChecked
+
+
+        val residencialestado= estResidencial.isChecked
+        val comercialestado= estComercial.isChecked
+        val industrialestado= estIndustrial.isChecked
+        val institucionalestado= estInstitucional.isChecked
+        val recreacionalestado= estRecreacional.isChecked
+        val interesculturalestado= estInterescultural.isChecked
+        val mixtoestado= estMixto.isChecked
+        val otrousoestado= estOtrouso.isChecked
+
+        val garajeestado= estGaraje.isChecked
+        val usocomercialestado= estUsocomercial.isChecked
+
+
+        var descripcion = findViewById<EditText>(R.id.txtDescripcion)
+
+
+        editor.putBoolean("aguaestado", aguaestado)
+        editor.putBoolean("alcantarilladoestado", alcantarilladoestado)
+        editor.putBoolean("energiaestado", energiaestado)
+        editor.putBoolean("telefonosestado", telefonosestado)
+        editor.putBoolean("gasestado", gasestado)
+        editor.putBoolean("ticsestado", ticsestado)
+        editor.putBoolean("lconstruccionestado", lconstruccionestado)
+
+        editor.putBoolean("residencialestado", residencialestado)
+        editor.putBoolean("comercialestado", comercialestado)
+        editor.putBoolean("industrialestado", industrialestado)
+        editor.putBoolean("institucionalestado", institucionalestado)
+        editor.putBoolean("recreacionalestado", recreacionalestado)
+        editor.putBoolean("interesculturalestado", interesculturalestado)
+        editor.putBoolean("mixtoestado", mixtoestado)
+        editor.putBoolean("otrousoestado", otrousoestado)
+
+        editor.putBoolean("garajeestado", garajeestado)
+        editor.putBoolean("usocomercialestado", usocomercialestado)
+
+
+
 
         //luego guardamos la descripcion dada por el que llena el fomulario
         editor.putString("descripcion", txtDescripcion?.text.toString()) //llevo el texto con la edicion base y la del usuario a editor
         //ya tenemos Fecha dentro de editor ahora vamos a mandar los datos
-        editor.commit() //Enviamos los datos
-        Toast.makeText(this,"Se guardaron los datos", Toast.LENGTH_LONG).show() //mostramos un mensaje de que si se guardaron
 
+        editor.commit() //Enviamos los datos
+        editor.apply() //Enviamos los datos del checkbox
+        Toast.makeText(this,"Se guardaron los datos", Toast.LENGTH_LONG).show() //mostramos un mensaje de que si se guardaron
+        Toast.makeText(this,"${descripcion.text}", Toast.LENGTH_LONG).show() //verifico que la DESCRIPCION COMPLETA Y FINAL se guarda correctamente
 
     }
 
@@ -163,7 +299,7 @@ class MainActivity : AppCompatActivity() {
 
         //al darle actualizar se edita el texto template primero con los datos base y luego por lo que el usuario vea necesario
         descripcion.setText("La fecha introducida es $fecha, la localidad es $localidad, el barrio es $barrio .")
-        Toast.makeText(this,"${descripcion.text}", Toast.LENGTH_LONG).show() //vemos si el texto que guarda descripcion es el correcto
+        Toast.makeText(this,"${descripcion.text}", Toast.LENGTH_LONG).show() //vemos si el texto template con datos concatenados que guarda descripcion es el correcto
 
     }
 
@@ -173,6 +309,8 @@ class MainActivity : AppCompatActivity() {
         actualizar(view)
     }
 
+    //se tiene que crear una función para el boton generar PDF en donde se llame a guardar y se guarder todos los datos en general
+    //esta función pues llama a guardar()
 
 
     /*

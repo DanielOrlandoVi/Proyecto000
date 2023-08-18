@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="vertical"
+    android:background="@drawable/background2"
     tools:context=".MainActivity"
     >
 
@@ -36,7 +37,8 @@
                 android:gravity="center"
                 android:text="FORMULARIO DE REGISTRO"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,7 +58,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
                         android:text="Fecha:"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewLocalidad"
@@ -64,7 +67,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Localidad:"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewBarrio"
@@ -72,7 +76,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Barrio:"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textColor="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewIDdiseño"
@@ -80,7 +85,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="ID Diseño: "
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -93,34 +99,53 @@
                         android:id="@+id/txtFecha"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="35dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="20"
                         android:hint="dd/mm/aaaa"
-                        android:inputType="date" />
+                        android:inputType="date"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
 
                     <EditText
                         android:id="@+id/txtLocalidad"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="20"
                         android:hint="Ej. Suba, Usaquén"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
 
                     <EditText
                         android:id="@+id/txtBarrio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="20"
                         android:hint="Ej. Mirandela"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
 
                     <EditText
                         android:id="@+id/txtIDdiseno"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="10"
                         android:hint="EX_**_**_**_**"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -143,7 +168,12 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:text="1. Registro fotográfico de la fachada:"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                />
         </LinearLayout>
 
 
@@ -158,10 +188,14 @@
                 android:id="@+id/ViewDatospredio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:text="2. Datos del predio:"
-                android:textSize="18sp" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
 
 
             <!--layout horizontal adentro de datos predio-->
@@ -187,7 +221,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Propietario:"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewTelefonopredio"
@@ -195,7 +232,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Teléfono:"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewCorreopredio"
@@ -203,7 +243,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Correo:"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewDireccionpredio"
@@ -211,9 +254,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Dirección:"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                 </LinearLayout>
+
+
 
 
                 <!--en este segundo los EditText-->
@@ -227,34 +275,55 @@
                         android:id="@+id/txtPropietariopredio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="20"
                         android:hint="Ej. Juan Carlos Hurtado Betancourt"
                         android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
                         android:textSize="16sp" />
 
                     <EditText
                         android:id="@+id/txtTelefonopredio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="10"
                         android:hint="Ej. 300 *** ***"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
 
                     <EditText
                         android:id="@+id/txtCorreopredio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="10"
                         android:hint="ejemplo@gmail.com"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
 
                     <EditText
                         android:id="@+id/txtDireccionpredio"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="#30ffffff"
+                        android:backgroundTint="@color/white"
                         android:ems="10"
                         android:hint="Ej. Car. 00A#00B-00"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white" />
+
                 </LinearLayout>
 
 
@@ -263,12 +332,25 @@
 
             <!--GUIA-->
             <!--layout horizontal para contener checkbox-->
+            <TextView
+                android:id="@+id/ViewCheckboxes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:text="A continuación por favor seleccione las casillas unicamente si se presenta el servicio, en caso contrario deje sin seleccionar."
+                android:textSize="18sp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <!--tres layout vertical para views, checked y unchecked-->
+                <!--dos layout vertical para views, estado-->
 
                 <!--layout views-->
                 <LinearLayout
@@ -283,7 +365,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="1. Agua"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewAlcantarillado"
@@ -291,7 +376,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
                         android:text="2. Alcantarillado"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewEnergia"
@@ -299,7 +387,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="3. Energía"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewTelefonos"
@@ -307,7 +398,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
                         android:text="4. Teléfonos"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewGas"
@@ -315,7 +409,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
                         android:text="5. Gas"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewTics"
@@ -323,7 +420,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
                         android:text="6. TICS"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                     <TextView
                         android:id="@+id/ViewLconstruccion"
@@ -331,123 +431,433 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
                         android:text="7. Lic.Construcción"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
 
                 </LinearLayout>
 
 
-                <!--layout Checked-->
+                <!--layout Checkboxes-->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="30dp"
                     android:orientation="vertical">
 
                     <CheckBox
-                        android:id="@+id/AguaSi"
+                        android:id="@+id/estAgua"
                         android:layout_width="81dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Sí" />
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
 
                     <CheckBox
-                        android:id="@+id/AlcantarilladoSi"
+                        android:id="@+id/estAlcantarillado"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sí" />
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
 
                     <CheckBox
-                        android:id="@+id/EnergiaSi"
+                        android:id="@+id/estEnergia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sí" />
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
 
                     <CheckBox
-                        android:id="@+id/TelefonosSi"
+                        android:id="@+id/estTelefonos"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sí" />
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
 
                     <CheckBox
-                        android:id="@+id/GasSi"
+                        android:id="@+id/estGas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sí" />
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
 
                     <CheckBox
-                        android:id="@+id/TicsSi"
+                        android:id="@+id/estTics"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sí" />
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
 
                     <CheckBox
-                        android:id="@+id/LconstruccionSi"
+                        android:id="@+id/estLconstruccion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Sí" />
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
 
                 </LinearLayout>
 
 
-                <!--layout Unchecked-->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <CheckBox
-                        android:id="@+id/AguaNo"
-                        android:layout_width="71dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="No" />
-
-                    <CheckBox
-                        android:id="@+id/AlcantarilladoNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="No" />
-
-                    <CheckBox
-                        android:id="@+id/EnergiaNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="No" />
-
-                    <CheckBox
-                        android:id="@+id/TelefonosNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="No" />
-
-                    <CheckBox
-                        android:id="@+id/GasNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="No" />
-
-                    <CheckBox
-                        android:id="@+id/TicsNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="No" />
-
-                    <CheckBox
-                        android:id="@+id/LconstruccionNo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="No" />
-
-                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/ViewUsoactual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="*Uso actual"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
 
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <LinearLayout
+                <!--dos layout vertical para views, estado-->
+
+                <!--layout views-->
+
+                <LinearLayout
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ViewResidencial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="1. Residencial"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewComercial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:text="2. Comercial"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewIndustrial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_weight="1"
+                        android:text="3. Industrial"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewInstitucional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="4. Institucional"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewRecreacional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="5. Recreacional"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewInterescultural"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="6. Bien de interés cultural"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewMixto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="7. Mixto"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewOtro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="8. ¿Otro?"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <EditText
+                        android:id="@+id/txtOtrouso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:ems="10"
+                        android:hint="¿Cual?"
+                        android:inputType="text"
+                        android:textSize="16sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                </LinearLayout>
+
+                <!--layout Checkboxes-->
+                <LinearLayout
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="vertical">
+
+
+                    <CheckBox
+                        android:id="@+id/estResidencial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estComercial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estIndustrial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estInstitucional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estRecreacional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estInterescultural"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estMixto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estOtrouso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/ViewAccesovehicular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="*Acceso vehicular"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--dos layout vertical para views, estado-->
+
+                <!--layout views-->
+                <LinearLayout
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ViewGaraje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1. Presenta Garaje"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/ViewUsocomercial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:text="2. Uso comercial"
+                        android:textSize="18sp"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"/>
+                </LinearLayout>
+
+
+                <!--layout chekboxes-->
+
+                <LinearLayout
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/estGaraje"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <CheckBox
+                        android:id="@+id/estUsocomercial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sí"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/ViewEstadopredio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:text="3. Descripción y estado del predio antes de intervenir el espacio público"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="18sp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
+
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="127dp"
             android:layout_marginLeft="20dp"
@@ -460,7 +870,10 @@
                 android:layout_height="111dp"
                 android:ems="500"
                 android:inputType="textMultiLine"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"/>
 
         </LinearLayout>
 
