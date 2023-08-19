@@ -1,0 +1,81 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:signature="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="binding"
+            type="se.warting.signatureview.views.SignedListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ViewActivity">
+
+
+        <RelativeLayout
+            android:id="@+id/signature_pad_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/buttons_container"
+            android:layout_marginBottom="106dp">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_above="@+id/signature_pad_description"
+                android:layout_marginBottom="25dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/signature_pad_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                android:text=" Acepto los terminos y condiciones"
+                android:textColor="@android:color/darker_gray" />
+
+            <se.warting.signatureview.views.SignaturePad
+                android:id="@+id/signature_pad"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                android:layout_marginTop="24dp"
+                signature:clearOnDoubleClick="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/buttons_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:paddingTop="16dp">
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/clear_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:text="Limpiar Firma" />
+
+            <Button
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/save_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:text="Guardar firma" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
