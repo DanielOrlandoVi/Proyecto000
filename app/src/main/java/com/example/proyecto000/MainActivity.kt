@@ -1,14 +1,74 @@
 package com.example.proyecto000
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    //Variables fotos
+    val picMedia1 = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri->
+        if(uri !=null){
+            //Imagen seleccionado
+            Foto1Viewer.setImageURI(uri)
+
+        }else{
+            //No imagen
+            Log.i("aris","no seleccionado")
+        }
+
+    }
+
+    lateinit var btn_foto1: Button
+    lateinit var Foto1Viewer: ImageView
+
+
+    val picMedia2 = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri->
+        if(uri !=null){
+            //Imagen seleccionado
+            Foto2Viewer.setImageURI(uri)
+
+        }else{
+            //No imagen
+            Log.i("aris","no seleccionado")
+        }
+
+    }
+
+    lateinit var btn_foto2: Button
+    lateinit var Foto2Viewer: ImageView
+
+
+    val picMedia3 = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri->
+        if(uri !=null){
+            //Imagen seleccionado
+            Foto3Viewer.setImageURI(uri)
+
+        }else{
+            //No imagen
+            Log.i("aris","no seleccionado")
+        }
+
+    }
+
+    lateinit var btn_foto3: Button
+    lateinit var Foto3Viewer: ImageView
+
+
+
+
+
+
+    //fin fotos
 
     var txtFecha: EditText?=null //se crea una variable de tipo edición de texto que inicialmente es null
     var txtLocalidad: EditText?=null
@@ -88,8 +148,38 @@ class MainActivity : AppCompatActivity() {
         estGaraje=findViewById(R.id.estGaraje)
         estUsocomercial=findViewById(R.id.estUsocomercial)
 
+        //Toma de fotos
+
+        btn_foto1 =findViewById(R.id.foto1)
+        Foto1Viewer = findViewById(R.id.imageView1)
+
+        btn_foto2 =findViewById(R.id.foto2)
+        Foto2Viewer = findViewById(R.id.imageView2)
+
+        btn_foto3 =findViewById(R.id.foto3)
+        Foto3Viewer = findViewById(R.id.imageView3)
+
+        btn_foto1.setOnClickListener(){
+            picMedia1.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        }
+
+        btn_foto2.setOnClickListener(){
+            picMedia2.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        }
+
+        btn_foto3.setOnClickListener(){
+            picMedia3.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        }
 
 
+
+
+
+
+
+
+
+        //fin toma de fotos
 
         var pref= getSharedPreferences("datos_persona", Context.MODE_PRIVATE)//Para indicar que se muestre el mensaje de guardar hasta el final de la actividad
 
@@ -201,6 +291,9 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
+
     fun guardar(view: View){ //al bttn no lo declaramos porque lo vamos a llamar con la función guardar
         var pref=getSharedPreferences("datos_persona", Context.MODE_PRIVATE) //aquí vamos a guardar los datos en la llave principal datos_persona de forma privada
         var editor=pref.edit() //creamos una variable editor en la que indicamos que vamos a editar lo que haya en pref
