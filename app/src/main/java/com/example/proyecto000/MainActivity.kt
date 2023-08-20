@@ -3,15 +3,19 @@ package com.example.proyecto000
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
+import android.view.View.OnTouchListener
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -79,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     var txtCorreopredio: EditText?=null
     var txtDireccionpredio: EditText?=null
     var txtOtrouso: EditText?=null
-    var txtDescripcion: EditText?=null
+    lateinit var txtDescripcion: EditText
 
 
     // Definir la variable checkboxes como una propiedad de la actividad
@@ -124,6 +128,21 @@ class MainActivity : AppCompatActivity() {
         txtDireccionpredio=findViewById(R.id.txtDireccionpredio)
         txtOtrouso=findViewById(R.id.txtOtrouso)
         txtDescripcion=findViewById(R.id.txtDescripcion)
+
+
+        //así permitimos el scroll del edittext desabilitando el scroll view padre
+        txtDescripcion.setOnTouchListener(OnTouchListener { v, event ->
+            if (txtDescripcion.hasFocus()) {
+                v.parent.requestDisallowInterceptTouchEvent(true)
+                when (event.action and MotionEvent.ACTION_MASK) {
+                    MotionEvent.ACTION_SCROLL -> {
+                        v.parent.requestDisallowInterceptTouchEvent(false)
+                        return@OnTouchListener true
+                    }
+                }
+            }
+            false
+        })
 
 
         estAgua=findViewById(R.id.estAgua) //enlazo la variable con el checkbox del layout
@@ -209,13 +228,22 @@ class MainActivity : AppCompatActivity() {
         //más _____
 
         // Si las variables son null o vacías, se reemplazan con "_" en las variables temporales
-        val fechaTemp = fecha.takeIf { !it.isNullOrEmpty() } ?: "_"
-        val localidadTemp = localidad.takeIf { !it.isNullOrEmpty() } ?: "_"
-        val barrioTemp = barrio.takeIf { !it.isNullOrEmpty() } ?: "_"
+        val fechaTemp = fecha.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val localidadTemp = localidad.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val barrioTemp = barrio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val direccionpredioTemp= direccionpredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val propietariopredioTemp= propietariopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val telefonopredioTemp= telefonopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val correopredioTemp= correopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+
 
         //A continuacion vamos a añadirle el texto template a descripción
         //texto con datos básicos, se edita lo necesario para darle al botón guardar de forma que finalmente la descripción queda completa y guardada
-        val descripcion = "LaLa fecha introducida es $fechaTemp, la localidad es $localidadTemp, el barrio es $barrioTemp.\""
+        val descripcion = "La información actualizada el $fechaTemp indica que el lugar se encuentra en la localidad de $localidadTemp, " +
+                "específicamente en el barrio $barrioTemp. La dirección exacta del lugar es $direccionpredioTemp. El propietario $propietariopredioTemp, " +
+                "puede ser contactado a través del número de teléfono $telefonopredioTemp o por el correo electrónico $correopredioTemp.\n" +
+                "El lugar se encuentra bajo las condiciones de …"
+
 
         //checkboxes servicios
         val defaultfalse = false //declaro un default en caso de que no se marque nada, en ese caso false
@@ -379,6 +407,11 @@ class MainActivity : AppCompatActivity() {
         txtFecha=findViewById(R.id.txtFecha)//Esa variable la conectamos con el objeto del layout
         txtLocalidad=findViewById(R.id.txtLocalidad)
         txtBarrio=findViewById(R.id.txtBarrio)
+        txtDireccionpredio=findViewById(R.id.txtDireccionpredio)
+        txtPropietariopredio=findViewById(R.id.txtPropietariopredio)
+        txtTelefonopredio=findViewById(R.id.txtTelefonopredio)
+        txtCorreopredio= findViewById(R.id.txtCorreopredio)
+
 
         var pref= getSharedPreferences("datos_persona", Context.MODE_PRIVATE)//Para indicar que se muestre el mensaje de guardar hasta el final de la actividad
 
@@ -388,10 +421,33 @@ class MainActivity : AppCompatActivity() {
 
         var barrio= pref.getString("barrio","")
 
+        var direccionpredio= pref.getString("direccionpredio","")
+
+        var propietariopredio= pref.getString("propietariopredio","")
+
+        var telefonopredio= pref.getString("telefonopredio", "")
+
+        var correopredio= pref.getString("correopredio", "")
+
+
         var descripcion = findViewById<EditText>(R.id.txtDescripcion)
 
         //al darle actualizar se edita el texto template primero con los datos base y luego por lo que el usuario vea necesario
-        descripcion.setText("La fecha introducida es $fecha, la localidad es $localidad, el barrio es $barrio .")
+
+        //en caso de que vea un vacio al darle actualizar que lo señalize con raya al piso
+        val fechaTemp = fecha.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val localidadTemp = localidad.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val barrioTemp = barrio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val direccionpredioTemp= direccionpredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val propietariopredioTemp= propietariopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val telefonopredioTemp= telefonopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val correopredioTemp= correopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+
+        descripcion.setText("La información actualizada el $fechaTemp indica que el lugar se encuentra en la localidad de $localidadTemp, " +
+                "específicamente en el barrio $barrioTemp. La dirección exacta del lugar es $direccionpredioTemp. El propietario $propietariopredioTemp, " +
+                "puede ser contactado a través del número de teléfono $telefonopredioTemp o por el correo electrónico $correopredioTemp.\n" +
+                "El lugar se encuentra bajo las condiciones de …")
+
         Toast.makeText(this,"${descripcion.text}", Toast.LENGTH_LONG).show() //vemos si el texto template con datos concatenados que guarda descripcion es el correcto
 
     }
