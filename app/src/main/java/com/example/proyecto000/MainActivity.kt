@@ -1,6 +1,7 @@
 package com.example.proyecto000
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
@@ -72,6 +73,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
     //fin fotos
 
     var txtFecha: EditText?=null //se crea una variable de tipo edición de texto que inicialmente es null
@@ -118,16 +120,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        txtFecha=findViewById(R.id.txtFecha)//Esa variable la conectamos con el objeto del layout
-        txtLocalidad=findViewById(R.id.txtLocalidad)
-        txtBarrio=findViewById(R.id.txtBarrio)
-        txtIDdiseno=findViewById(R.id.txtIDdiseno)
-        txtPropietariopredio=findViewById(R.id.txtPropietariopredio)
-        txtTelefonopredio=findViewById(R.id.txtTelefonopredio)
-        txtCorreopredio=findViewById(R.id.txtCorreopredio)
-        txtDireccionpredio=findViewById(R.id.txtDireccionpredio)
-        txtOtrouso=findViewById(R.id.txtOtrouso)
-        txtDescripcion=findViewById(R.id.txtDescripcion)
+
+
+
+        txtFecha = findViewById(R.id.txtFecha)//Esa variable la conectamos con el objeto del layout
+        txtLocalidad = findViewById(R.id.txtLocalidad)
+        txtBarrio = findViewById(R.id.txtBarrio)
+        txtIDdiseno = findViewById(R.id.txtIDdiseno)
+        txtPropietariopredio = findViewById(R.id.txtPropietariopredio)
+        txtTelefonopredio = findViewById(R.id.txtTelefonopredio)
+        txtCorreopredio = findViewById(R.id.txtCorreopredio)
+        txtDireccionpredio = findViewById(R.id.txtDireccionpredio)
+        txtOtrouso = findViewById(R.id.txtOtrouso)
+        txtDescripcion = findViewById(R.id.txtDescripcion)
 
 
         //así permitimos el scroll del edittext desabilitando el scroll view padre
@@ -145,81 +150,79 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-        estAgua=findViewById(R.id.estAgua) //enlazo la variable con el checkbox del layout
-        estAlcantarillado=findViewById(R.id.estAlcantarillado)
-        estEnergia=findViewById(R.id.estEnergia)
-        estTelefonos=findViewById(R.id.estTelefonos)
-        estGas=findViewById(R.id.estGas)
-        estTics=findViewById(R.id.estTics)
-        estLconstruccion=findViewById(R.id.estLconstruccion)
+        estAgua = findViewById(R.id.estAgua) //enlazo la variable con el checkbox del layout
+        estAlcantarillado = findViewById(R.id.estAlcantarillado)
+        estEnergia = findViewById(R.id.estEnergia)
+        estTelefonos = findViewById(R.id.estTelefonos)
+        estGas = findViewById(R.id.estGas)
+        estTics = findViewById(R.id.estTics)
+        estLconstruccion = findViewById(R.id.estLconstruccion)
 
 
-        estResidencial=findViewById(R.id.estResidencial)
-        estComercial=findViewById(R.id.estComercial)
-        estIndustrial=findViewById(R.id.estIndustrial)
-        estInstitucional=findViewById(R.id.estInstitucional)
-        estRecreacional=findViewById(R.id.estRecreacional)
-        estInterescultural=findViewById(R.id.estInterescultural)
-        estMixto=findViewById(R.id.estMixto)
-        estOtrouso=findViewById(R.id.estOtrouso)
+        estResidencial = findViewById(R.id.estResidencial)
+        estComercial = findViewById(R.id.estComercial)
+        estIndustrial = findViewById(R.id.estIndustrial)
+        estInstitucional = findViewById(R.id.estInstitucional)
+        estRecreacional = findViewById(R.id.estRecreacional)
+        estInterescultural = findViewById(R.id.estInterescultural)
+        estMixto = findViewById(R.id.estMixto)
+        estOtrouso = findViewById(R.id.estOtrouso)
 
 
-        estGaraje=findViewById(R.id.estGaraje)
-        estUsocomercial=findViewById(R.id.estUsocomercial)
+        estGaraje = findViewById(R.id.estGaraje)
+        estUsocomercial = findViewById(R.id.estUsocomercial)
 
         //Toma de fotos
 
-        btn_foto1 =findViewById(R.id.foto1)
+        btn_foto1 = findViewById(R.id.foto1)
         Foto1Viewer = findViewById(R.id.imageView1)
 
-        btn_foto2 =findViewById(R.id.foto2)
+        btn_foto2 = findViewById(R.id.foto2)
         Foto2Viewer = findViewById(R.id.imageView2)
 
-        btn_foto3 =findViewById(R.id.foto3)
+        btn_foto3 = findViewById(R.id.foto3)
         Foto3Viewer = findViewById(R.id.imageView3)
 
-        btn_foto1.setOnClickListener(){
+        btn_foto1.setOnClickListener() {
             picMedia1.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
 
-        btn_foto2.setOnClickListener(){
+        btn_foto2.setOnClickListener() {
             picMedia2.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
 
-        btn_foto3.setOnClickListener(){
+        btn_foto3.setOnClickListener() {
             picMedia3.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
 
 
-
-
-
-
-
-
-
         //fin toma de fotos
 
-        var pref= getSharedPreferences("datos_persona", Context.MODE_PRIVATE)//Para indicar que se muestre el mensaje de guardar hasta el final de la actividad
+        var pref = getSharedPreferences(
+            "datos_persona",
+            Context.MODE_PRIVATE
+        )//Para indicar que se muestre el mensaje de guardar hasta el final de la actividad
 
-        var fecha= pref.getString("fecha", "") //llamamos a Fecha y si esta vacio se devuelve un string vacio
+        var fecha = pref.getString(
+            "fecha",
+            ""
+        ) //llamamos a Fecha y si esta vacio se devuelve un string vacio
 
-        var localidad= pref.getString("localidad", "")
+        var localidad = pref.getString("localidad", "")
 
-        var barrio= pref.getString("barrio", "")
+        var barrio = pref.getString("barrio", "")
 
-        var iddiseno= pref.getString("iddiseno", "")
+        var iddiseno = pref.getString("iddiseno", "")
 
-        var propietariopredio= pref.getString("propietariopredio", "")
+        var propietariopredio = pref.getString("propietariopredio", "")
 
-        var telefonopredio= pref.getString("telefonopredio", "")
+        var telefonopredio = pref.getString("telefonopredio", "")
 
-        var correopredio= pref.getString("correopredio", "")
+        var correopredio = pref.getString("correopredio", "")
 
-        var direccionpredio= pref.getString("direccionpredio", "")
+        var direccionpredio = pref.getString("direccionpredio", "")
 
-        var otrouso= pref.getString("otrouso", "")
-
+        var otrouso = pref.getString("otrouso", "")
 
 
         // Las siguientes variables temporales van a ser para que UNICAMENTE en descripcion
@@ -231,47 +234,50 @@ class MainActivity : AppCompatActivity() {
         val fechaTemp = fecha.takeIf { !it.isNullOrEmpty() } ?: "________"
         val localidadTemp = localidad.takeIf { !it.isNullOrEmpty() } ?: "________"
         val barrioTemp = barrio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val direccionpredioTemp= direccionpredio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val propietariopredioTemp= propietariopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val telefonopredioTemp= telefonopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val correopredioTemp= correopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val direccionpredioTemp = direccionpredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val propietariopredioTemp = propietariopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val telefonopredioTemp = telefonopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
+        val correopredioTemp = correopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
 
 
         //A continuacion vamos a añadirle el texto template a descripción
         //texto con datos básicos, se edita lo necesario para darle al botón guardar de forma que finalmente la descripción queda completa y guardada
-        val descripcion = "La información actualizada el $fechaTemp indica que el lugar se encuentra en la localidad de $localidadTemp, " +
-                "específicamente en el barrio $barrioTemp. La dirección exacta del lugar es $direccionpredioTemp. El propietario $propietariopredioTemp, " +
-                "puede ser contactado a través del número de teléfono $telefonopredioTemp o por el correo electrónico $correopredioTemp.\n" +
-                "El lugar se encuentra bajo las condiciones de …"
+        val descripcion =
+            "La información actualizada el $fechaTemp indica que el lugar se encuentra en la localidad de $localidadTemp, " +
+                    "específicamente en el barrio $barrioTemp. La dirección exacta del lugar es $direccionpredioTemp. El propietario $propietariopredioTemp, " +
+                    "puede ser contactado a través del número de teléfono $telefonopredioTemp o por el correo electrónico $correopredioTemp.\n" +
+                    "El lugar se encuentra bajo las condiciones de …"
 
 
         //checkboxes servicios
-        val defaultfalse = false //declaro un default en caso de que no se marque nada, en ese caso false
-        val aguestado= pref.getBoolean("aguaestado", defaultfalse) //recupero el valor de aguaestado del shared preferences
-        val alcantarilladoestado= pref.getBoolean("alcantarilladoestado", defaultfalse)
-        val energiaestado= pref.getBoolean("energiaestado", defaultfalse)
-        val telefonosestado= pref.getBoolean("telefonosestado", defaultfalse)
-        val gasestado= pref.getBoolean("gasestado", defaultfalse)
-        val ticsestado= pref.getBoolean("ticsestado", defaultfalse)
-        val lconstruccionestado= pref.getBoolean("lconstruccionestado", defaultfalse)
+        val defaultfalse =
+            false //declaro un default en caso de que no se marque nada, en ese caso false
+        val aguestado = pref.getBoolean(
+            "aguaestado",
+            defaultfalse
+        ) //recupero el valor de aguaestado del shared preferences
+        val alcantarilladoestado = pref.getBoolean("alcantarilladoestado", defaultfalse)
+        val energiaestado = pref.getBoolean("energiaestado", defaultfalse)
+        val telefonosestado = pref.getBoolean("telefonosestado", defaultfalse)
+        val gasestado = pref.getBoolean("gasestado", defaultfalse)
+        val ticsestado = pref.getBoolean("ticsestado", defaultfalse)
+        val lconstruccionestado = pref.getBoolean("lconstruccionestado", defaultfalse)
 
         //checkboxes uso actual del predio
 
-        val residencialestado= pref.getBoolean("residencialestado", defaultfalse)
-        val comercialestado= pref.getBoolean("comercialestado", defaultfalse)
-        val industrialestado= pref.getBoolean("industrialestado", defaultfalse)
-        val institucionalestado= pref.getBoolean("institucionalestado", defaultfalse)
-        val recreacionalestado= pref.getBoolean("recreacionalestado", defaultfalse)
-        val interesculturalestado= pref.getBoolean("interesculturalestado", defaultfalse)
-        val mixtoestado= pref.getBoolean("mixtoestado", defaultfalse)
-        val otrousoestado= pref.getBoolean("otrousoestado", defaultfalse)
+        val residencialestado = pref.getBoolean("residencialestado", defaultfalse)
+        val comercialestado = pref.getBoolean("comercialestado", defaultfalse)
+        val industrialestado = pref.getBoolean("industrialestado", defaultfalse)
+        val institucionalestado = pref.getBoolean("institucionalestado", defaultfalse)
+        val recreacionalestado = pref.getBoolean("recreacionalestado", defaultfalse)
+        val interesculturalestado = pref.getBoolean("interesculturalestado", defaultfalse)
+        val mixtoestado = pref.getBoolean("mixtoestado", defaultfalse)
+        val otrousoestado = pref.getBoolean("otrousoestado", defaultfalse)
 
         //checkboxes uso vehicular
 
-        val garajeestado= pref.getBoolean("garajeestado", defaultfalse)
-        val usocomercialestado= pref.getBoolean("usocomercialestado",defaultfalse)
-
-
+        val garajeestado = pref.getBoolean("garajeestado", defaultfalse)
+        val usocomercialestado = pref.getBoolean("usocomercialestado", defaultfalse)
 
 
         //muestro en pantalla los checkboxes para ver si se guardo correctamente
@@ -318,7 +324,16 @@ class MainActivity : AppCompatActivity() {
         txtDescripcion?.setText(descripcion)
 
 
+        //conectamos el boton firma para que redirija a la otra activity
+        val btnFirma= findViewById<Button>(R.id.btnFirma)
+
+        btnFirma.setOnClickListener {
+            startActivity(Intent(this, FirmActivity::class.java))
+        }
+
     }
+
+
 
 
 
