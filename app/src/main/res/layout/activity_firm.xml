@@ -1,14 +1,13 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bind="http://schemas.android.com/apk/res-auto"
-    xmlns:signature="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirmActivity">
 
-    <data>
 
-        <variable
-            name="binding"
-            type="se.warting.signatureview.views.SignedListener" />
-    </data>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,7 +45,7 @@
                 android:layout_height="200dp"
 
                 android:layout_marginTop="24dp"
-                signature:clearOnDoubleClick="true" />
+                />
 
         </RelativeLayout>
 
@@ -78,4 +77,5 @@
         </LinearLayout>
 
     </RelativeLayout>
-</layout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

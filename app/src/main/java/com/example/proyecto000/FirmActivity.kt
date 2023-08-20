@@ -42,6 +42,7 @@ class FirmActivity : AppCompatActivity() {
 // Crear un archivo con el nombre del UUID
             val file = File(getExternalFilesDir("firms"), "$uuid.png")
 
+
             // Escribir el bitmap en el archivo usando un stream
             try {
                 val stream = FileOutputStream(file)
