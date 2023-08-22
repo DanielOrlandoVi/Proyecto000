@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_content"
@@ -7,20 +8,42 @@
     android:layout_height="match_parent"
     tools:context=".PdfActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Primer PDF"
-        android:textSize="24sp" />
+        android:orientation="horizontal">
+
+        <!-- Coloca elementos de encabezado aquí si es necesario -->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/firmaLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/headerLayout"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/FirmaView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            />
+
+        <!-- Agrega cualquier otro elemento relacionado con la firma aquí -->
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btnpdf"
+        android:id="@+id/btnPDF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
+        android:layout_below="@id/firmaLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
         android:text="Crear PDF" />
 
 </RelativeLayout>
+

@@ -1,10 +1,14 @@
 package com.example.proyecto000
 
+import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import se.warting.signatureview.views.SignaturePad
 import java.io.File
 import java.io.FileOutputStream
@@ -16,6 +20,11 @@ class FirmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_firm)
+
+
+
+
+
 
         // Obtener la referencia a la vista de firma
         val signatureView = findViewById<View>(R.id.signature_pad) as SignaturePad
@@ -50,6 +59,12 @@ class FirmActivity : AppCompatActivity() {
                 signatureBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
                 stream.flush()
                 stream.close()
+                showToast("Firma guardada con exito")
+                signatureView.clear()
+                val intent = Intent(this, PdfActivity::class.java)
+                intent.putExtra("URI_firma",file.name)
+                startActivity(intent)
+
             } catch (e: IOException) {
                 e.printStackTrace()
             }
@@ -58,5 +73,10 @@ class FirmActivity : AppCompatActivity() {
 
 
         }
+    }
+
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
