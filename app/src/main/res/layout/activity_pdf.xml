@@ -40,7 +40,7 @@
                     android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
                     android:text="FORMATO ACTA DE VECINDAD"
-                    android:textSize="6sp" />
+                    android:textSize="4sp" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="UNIÓN TEMPORAL SEÑALIZANDO ZONA NORTE"
-                    android:textSize="6sp" />
+                    android:textSize="4sp" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -57,19 +57,19 @@
                     android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
                     android:text="Carrera 20 # 137 - 56 - Usaquén - Bogota D.C."
-                    android:textSize="6sp" />
+                    android:textSize="4sp" />
 
                 <!--contratista interventoria-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="66dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <!--columna contratista-->
                     <LinearLayout
-                        android:layout_width="161dp"
-                        android:layout_height="65dp"
+                        android:layout_width="156dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginRight="-1dp"
                         android:background="@drawable/border"
                         android:orientation="vertical">
@@ -80,7 +80,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
-                            android:text="CONTRATISTA" />
+                            android:text="CONTRATISTA"
+                            android:textSize="6sp" />
 
 
                         <!--union temporal y logo señalvias-->
@@ -102,7 +103,7 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
                                     android:text="UNIÓN TEMPORAL SEÑALIZANDO ZONA NORTE"
-                                    android:textSize="6sp" />
+                                    android:textSize="5sp" />
 
                                 <TextView
                                     android:id="@+id/textView7"
@@ -110,19 +111,19 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
                                     android:text="CONTRATO NÚMERO 2021- 2569"
-                                    android:textSize="6sp" />
+                                    android:textSize="5sp" />
                             </LinearLayout>
 
                             <!--columna logo señalvias-->
                             <LinearLayout
-                                android:layout_width="105dp"
+                                android:layout_width="99dp"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical">
 
                                 <ImageView
                                     android:id="@+id/ViewUniontemporal"
-                                    android:layout_width="105dp"
-                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
                                     android:src="@drawable/uniontemporalsenalizando" />
                             </LinearLayout>
 
@@ -133,8 +134,8 @@
 
                     <!--columna interventoria-->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="65dp"
+                        android:layout_width="172dp"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
@@ -144,11 +145,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
-                            android:text="INTERVENTORÍA" />
+                            android:text="INTERVENTORÍA"
+                            android:textSize="6sp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="36dp"
                             android:orientation="horizontal">
 
                             <!--columna nombre interventoria-->
@@ -163,7 +165,7 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
                                     android:text="INTERVENTORÍA JOYCO BIS SAS"
-                                    android:textSize="6sp" />
+                                    android:textSize="5sp" />
 
                                 <TextView
                                     android:id="@+id/textView12"
@@ -171,19 +173,19 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
                                     android:text="CONTRATO NÚMERO 2021-2012"
-                                    android:textSize="6sp" />
+                                    android:textSize="5sp" />
                             </LinearLayout>
 
                             <!--columna logo interventoria-->
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="40dp"
+                                android:layout_height="wrap_content"
                                 android:orientation="vertical">
 
                                 <ImageView
                                     android:id="@+id/ViewJoyco"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="wrap_content"
                                     android:src="@drawable/joycoprov"
 
                                     />
@@ -191,6 +193,7 @@
 
 
                         </LinearLayout>
+
                     </LinearLayout>
 
 
@@ -201,14 +204,14 @@
             <!--layout del logo-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
+                android:layout_height="62dp"
                 android:background="@drawable/border"
                 android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/ViewAlcaldia"
                     android:layout_width="match_parent"
-                    android:layout_height="119dp"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/logoalcaldia" />
             </LinearLayout>
 
@@ -236,9 +239,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="FECHA"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -246,7 +249,7 @@
                     android:fontFamily="@font/noto_sans"
                     android:inputType="text"
                     android:text="Name"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
             </LinearLayout>
 
             <!--layout localidad-->
@@ -262,9 +265,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="LOCALIDAD"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextText2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -272,7 +275,7 @@
                     android:fontFamily="@font/noto_sans"
                     android:inputType="text"
                     android:text="Name"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
             </LinearLayout>
 
             <!--layout barrio-->
@@ -288,9 +291,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="BARRIO"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextText3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -298,7 +301,7 @@
                     android:fontFamily="@font/noto_sans"
                     android:inputType="text"
                     android:text="Name"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
             </LinearLayout>
 
             <!--layout iddiseno-->
@@ -314,9 +317,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="ID DISEÑO"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/editTextText4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -324,7 +327,7 @@
                     android:fontFamily="@font/noto_sans"
                     android:inputType="text"
                     android:text="Name"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
             </LinearLayout>
 
 
@@ -342,15 +345,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="164dp"
             android:orientation="horizontal">
 
             <!--Layout Datos del predio-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="0.7"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView5"
@@ -358,7 +361,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="2. DATOS DEL PREDIO"
-                    android:textSize="10sp" />
+                    android:textSize="8sp" />
 
 
                 <LinearLayout
@@ -379,7 +382,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="Nombre Propietario"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
                         <TextView
                             android:id="@+id/textView15"
@@ -387,7 +390,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="Teléfono"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
                         <TextView
                             android:id="@+id/textView16"
@@ -395,7 +398,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="Correo electrónico"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
                         <TextView
                             android:id="@+id/textView17"
@@ -403,7 +406,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="Dirección"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
                     </LinearLayout>
 
                     <!--edittext nombre propietaro, telefono, email-->
@@ -413,7 +416,7 @@
                         android:orientation="vertical">
 
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -421,9 +424,9 @@
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="10sp" />
+                            android:textSize="4sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -431,9 +434,9 @@
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="10sp" />
+                            android:textSize="4sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -441,9 +444,9 @@
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="10sp" />
+                            android:textSize="4sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -451,7 +454,7 @@
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="10sp" />
+                            android:textSize="4sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -459,12 +462,12 @@
                 <!--layout Checkboxes servicios-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="283dp"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <!--layout Checkboxes nombres servicios-->
                     <LinearLayout
-                        android:layout_width="94dp"
+                        android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
@@ -479,7 +482,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="1. Agua"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView19"
@@ -487,7 +490,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="2. Alcantarillado"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView20"
@@ -495,14 +498,14 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="3. Energía"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="4. Teléfonos"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView22"
@@ -510,7 +513,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="5. Gas"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView23"
@@ -518,7 +521,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="6. TICS"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView24"
@@ -526,7 +529,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="7. Licencia de construcción"
-                            android:textSize="12sp" />
+                            android:textSize="8sp" />
                     </LinearLayout>
 
                     <!--layout Checkboxes servicios "SI"-->
@@ -541,58 +544,58 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="SI"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
                         <CheckBox
                             android:id="@+id/checkBox"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8"
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5"
                             android:textSize="14sp" />
 
                         <CheckBox
                             android:id="@+id/checkBox2"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox3"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox4"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox5"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
+                            android:layout_height="15dp"
                             android:minHeight="28dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox6"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox7"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
                     </LinearLayout>
 
                     <!--layout Checkboxes servicios "NO"-->
@@ -607,56 +610,56 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="NO"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
                         <CheckBox
                             android:id="@+id/checkBox8"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox9"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox10"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox11"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox12"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox13"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox14"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                     </LinearLayout>
 
@@ -672,95 +675,83 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
                             android:text="OBSERVACIONES"
-                            android:textSize="10sp" />
+                            android:textSize="8sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:inputType="text"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             android:text="No hay observaciones"
-                            android:textSize="10sp" />
+                            android:textSize="4sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:inputType="text"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             android:text="No hay observaciones"
-                            android:textSize="10sp" />
+                            android:textSize="4sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             android:text="No hay observaciones"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             android:text="No hay observaciones"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             android:text="No hay observaciones"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             android:text="No hay observaciones"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
-                            android:scaleX="0.9"
-                            android:scaleY="0.9"
                             android:text="No hay observaciones"
-                            android:textSize="10sp" />
+                            android:textSize="6sp" />
                     </LinearLayout>
 
 
-                <!--layout Uso actual-->
+                    <!--layout Uso actual-->
 
                 </LinearLayout>
 
@@ -770,8 +761,8 @@
             <!--Layout Registro fotografico fachada-->
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="439dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -781,12 +772,12 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="1. REGISTRO FOTOGRÁFICO DE FACHADA"
-                    android:textSize="10sp" />
+                    android:textSize="6sp" />
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
-                    android:layout_height="411dp"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/joycoprov" />
 
             </LinearLayout>
@@ -826,119 +817,145 @@
                             android:id="@+id/textView33"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="USO ACTUAL" />
+                            android:text="USO ACTUAL"
+                            android:textSize="6sp" />
 
                         <TextView
                             android:id="@+id/textView9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. Residencial" />
+                            android:text="1. Residencial"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="2. Comercial" />
+                            android:text="2. Comercial"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="3. Industrial" />
+                            android:text="3. Industrial"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView25"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="4. Institucional" />
+                            android:text="4. Institucional"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView29"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="5. Recreacional" />
+                            android:text="5. Recreacional"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView30"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="6. Bien de interés cultural" />
+                            android:text="6. Bien de interés cultural"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView31"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="7. Mixto" />
+                            android:text="7. Mixto"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView32"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="8. ¿Otro?" />
+                            android:text="8. ¿Otro?"
+                            android:textSize="8sp" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="¿Cuál?"
+                            android:textSize="8sp" />
                     </LinearLayout>
 
                     <!--layout Checkboxes Uso actual-->
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="59dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <CheckBox
                             android:id="@+id/checkBox15"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox16"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox17"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox18"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox19"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox20"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox21"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
 
                         <CheckBox
                             android:id="@+id/checkBox22"
                             android:layout_width="match_parent"
-                            android:layout_height="34dp"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8" />
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5" />
+
+                        <TextView
+                            android:id="@+id/editTextText17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="text"
+                            android:text="¿Cuál?"
+                            android:textSize="6sp" />
 
                     </LinearLayout>
 
@@ -954,25 +971,29 @@
                             android:id="@+id/textView34"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="ACCESO VEHICULAR" />
+                            android:text="ACCESO VEHICULAR"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView35"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Garaje:" />
+                            android:text="Garaje:"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView36"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Uso Comercial:" />
+                            android:text="Uso Comercial:"
+                            android:textSize="8sp" />
 
                         <TextView
                             android:id="@+id/textView38"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Uso del garaje:" />
+                            android:text="Uso del garaje:"
+                            android:textSize="8sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -983,28 +1004,29 @@
                         <CheckBox
                             android:id="@+id/checkBox24"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8"
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5"
                             android:text="Sí" />
 
                         <CheckBox
                             android:id="@+id/checkBox25"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8"
+                            android:layout_height="15dp"
+                            android:scaleX="0.5"
+                            android:scaleY="0.5"
                             android:text="Sí" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/editTextText16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
+                            android:gravity="center"
                             android:inputType="text"
-                            android:text="Name"
-                            android:scaleX="0.8"
-                            android:scaleY="0.8"/>
+                            android:text="Uso"
+                            android:textSize="8sp" />
+
                     </LinearLayout>
 
 
@@ -1013,36 +1035,228 @@
         </LinearLayout>
 
 
-=======
+        <!-- Layout padre horizontal de Descripcion-->
     <LinearLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- Coloca elementos de encabezado aquí si es necesario -->
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/firmaLayout"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_below="@id/headerLayout"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/FirmaView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            />
+            android:orientation="vertical">
 
-        <!-- Agrega cualquier otro elemento relacionado con la firma aquí -->
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. DESCRIPCIÓN Y ESTADO DEL PREDIO ANTES DE INTERVENIR EL ESPACIO PÚBLICO"
+                android:textSize="6sp" />
+
+            <TextView
+                android:id="@+id/editTextText18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:text="Se realiza acta de vecindad en predio ubicado en el conjunto residencial Mirandela 7, el cual presenta fachada en ladrillo prensado en buenas condiciones, el uso y desgaste es natural por el tiempo de exposición la intemperie, cuenta con zonas de cerramiento en reja de estructura metálica en óptimas condiciones; andén con zonas en concreto al igual que sardinel, presentan desportillamientos generalizados, algunas tabletas del andén se encuentran fisuradas y desportilladas. Se pueden evidenciar diferentes secciones con plantas decorativas de jardín, estas se encuentran en buenas condiciones, cabe resaltar que algunas secciones del anden presentan empozamientos por hundimiento del material de revestimiento. Se evidencia zona de este con sección en zona verde, la cual se encuentra en óptimas condiciones, estas zonas cuentan con la presencia de individuos arbóreos.  El conjunto residencial presenta portería con fachada en ladrillo al igual que el resto de la zona externa del predio, cuenta con acceso vehicular con estructura metálica en buenas condiciones, puerta de acceso a la portería del conjunto en vidrio de seguridad, adicionalmente se observa ventana metálica con vidrio en buenas condiciones, cuenta con un ante techo sobre la misma en estructura metálica y policarbonato, al acceso vehicular del conjunto se evidencia rampa en adoquín en buenas condiciones, en general los espacios se encuentran en buenas condiciones, el desgaste presentado en algunas de estas es natural."
+                android:textSize="4sp" />
+
+
+            <!-- Layout padre horizontal fotos predio-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="78dp"
+                android:orientation="horizontal">
+
+                <!-- Layout vertical foto 2-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/joycoprov" />
+                </LinearLayout>
+
+
+                <!-- Layout vertical foto 3-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/joycoprov" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
 
 
     </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/firmaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headerLayout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos,    vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a los ____días del mes de __Junio__ de __2022__"
+                android:textSize="4sp" />
+
+            <!-- layout firmas 1 y 2 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal">
+
+                <!-- layout firma 1-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PROPIETARIO Y/O ENCARGADO:"
+                        android:textSize="6sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:src="@drawable/joycoprov" />
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Uberney Giraldo"
+                        android:textSize="4sp" />
+
+                    <TextView
+                        android:id="@+id/textView43"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Persona quien atiende la visita"
+                        android:textSize="4sp" />
+                </LinearLayout>
+
+                <!-- layout firma 2-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ELABORÓ"
+                        android:textSize="6sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:src="@drawable/joycoprov" />
+
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Alba Avendaño"
+                        android:textSize="4sp" />
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Residente Técnico - Contratista"
+                        android:textSize="4sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- layout firma 3-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:src="@drawable/joycoprov" />
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Eliana Julieth Fajardo "
+                        android:textSize="4sp" />
+
+                    <TextView
+                        android:id="@+id/textView51"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Residente Social - Contratista"
+                        android:textSize="4sp" />
+                </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="El uso y distribución del presente formato se realiza para la ejecución de actividades del área social del contrato 2021 - 2659  instaurado entre la Union Temporal Señalizando Zona Norte y la Secretaria Distrital de Movilidad y cuenta con la respectiva revisión y aprobación de la interventoría Soyco BIC SAS."
+                android:textSize="4sp" />
+
+        </LinearLayout>
+
 
     <Button
         android:id="@+id/btnPDF"
@@ -1050,8 +1264,10 @@
         android:layout_height="wrap_content"
         android:text="Crear PDF" />
 
+    </LinearLayout>
 
 </LinearLayout>
 
-</LinearLayout>
+
+
 

@@ -29,8 +29,8 @@ class PdfActivity : AppCompatActivity() {
         val fileUri = Uri.fromFile(File(getExternalFilesDir("firms"), fileName))
 
         // Mostrar la firma en el ImageView
-        val imageView: ImageView = findViewById(R.id.FirmaView)
-        imageView.setImageURI(fileUri)
+        //val imageView: ImageView = findViewById(R.id.FirmaView)
+        //imageView.setImageURI(fileUri)
 
 
         button.setOnClickListener {
@@ -42,8 +42,8 @@ class PdfActivity : AppCompatActivity() {
             contentView.draw(canvas)
 
             // Escala el bitmap capturado al tamaño de oficio
-            val oficioWidth = 612 // Ancho en puntos
-            val oficioHeight = 936 // Alto en puntos (8.5 x 72)
+            val oficioWidth = 5100 // Ancho en puntos
+            val oficioHeight = 8400// Alto en puntos (8.5 x 72)
 
             val scaleX = oficioWidth.toFloat() / screenshot.width
             val scaleY = oficioHeight.toFloat() / screenshot.height
