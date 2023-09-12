@@ -21,7 +21,7 @@
         <!--layout de fila 1 a 6 Excel-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:orientation="horizontal">
 
 
@@ -34,60 +34,71 @@
 
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/ViewPDFActa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="-1dp"
                     android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
                     android:text="FORMATO ACTA DE VECINDAD"
-                    android:textSize="4sp" />
+                    android:textSize="4sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/ViewPDFUnion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
                     android:fontFamily="@font/noto_sans"
                     android:text="UNIÓN TEMPORAL SEÑALIZANDO ZONA NORTE"
-                    android:textSize="4sp" />
+                    android:textSize="4sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/ViewPDFDireccionContratistas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
                     android:text="Carrera 20 # 137 - 56 - Usaquén - Bogota D.C."
-                    android:textSize="4sp" />
+                    android:textSize="4sp"
+                    android:textStyle="bold" />
 
                 <!--contratista interventoria-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginRight="-1dp"
                     android:orientation="horizontal">
 
                     <!--columna contratista-->
                     <LinearLayout
                         android:layout_width="156dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="-1dp"
                         android:layout_marginRight="-1dp"
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
 
                         <TextView
-                            android:id="@+id/TextViewPDFContratista"
+                            android:id="@+id/ViewPDFContratista"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
                             android:fontFamily="@font/noto_sans"
                             android:text="CONTRATISTA"
-                            android:textSize="6sp" />
+                            android:textSize="6sp"
+                            android:textStyle="bold" />
 
 
                         <!--union temporal y logo señalvias-->
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="44dp"
                             android:orientation="horizontal">
 
 
@@ -98,15 +109,16 @@
                                 android:orientation="vertical">
 
                                 <TextView
-                                    android:id="@+id/textView6"
+                                    android:id="@+id/ViewPDFtxtLogoIcovias1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginLeft="2dp"
                                     android:fontFamily="@font/noto_sans"
                                     android:text="UNIÓN TEMPORAL SEÑALIZANDO ZONA NORTE"
                                     android:textSize="5sp" />
 
                                 <TextView
-                                    android:id="@+id/textView7"
+                                    android:id="@+id/ViewPDFtxtLogoIcovias2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
@@ -116,14 +128,16 @@
 
                             <!--columna logo señalvias-->
                             <LinearLayout
-                                android:layout_width="99dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:id="@+id/ViewUniontemporal"
+                                    android:id="@+id/ViewPDFLogoIcovias"
                                     android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
+                                    android:layout_height="35dp"
+                                    android:layout_marginRight="2dp"
+                                    android:layout_marginBottom="2sp"
                                     android:src="@drawable/uniontemporalsenalizando" />
                             </LinearLayout>
 
@@ -136,6 +150,9 @@
                     <LinearLayout
                         android:layout_width="172dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="-1dp"
+                        android:layout_marginTop="-1dp"
+                        android:layout_marginRight="-1dp"
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
@@ -144,9 +161,11 @@
                             android:id="@+id/ViewPDFInterventoria"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
                             android:fontFamily="@font/noto_sans"
                             android:text="INTERVENTORÍA"
-                            android:textSize="6sp" />
+                            android:textSize="6sp"
+                            android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -160,7 +179,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
-                                    android:id="@+id/textView11"
+                                    android:id="@+id/ViewPDFtxtLogoJoyco1"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
@@ -168,7 +187,7 @@
                                     android:textSize="5sp" />
 
                                 <TextView
-                                    android:id="@+id/textView12"
+                                    android:id="@+id/ViewPDFtxtLogoJoyco2"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
@@ -183,12 +202,11 @@
                                 android:orientation="vertical">
 
                                 <ImageView
-                                    android:id="@+id/ViewJoyco"
+                                    android:id="@+id/ViewPDFLogoJoyco"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:src="@drawable/joycoprov"
-
-                                    />
+                                    android:layout_marginRight="2dp"
+                                    android:src="@drawable/joycoprov" />
                             </LinearLayout>
 
 
@@ -204,14 +222,17 @@
             <!--layout del logo-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="62dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="-3dp"
                 android:background="@drawable/border"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/ViewAlcaldia"
+                    android:id="@+id/ViewPDFLogoAlcaldia"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
                     android:src="@drawable/logoalcaldia" />
             </LinearLayout>
 
@@ -231,22 +252,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="@drawable/border">
 
                 <TextView
                     android:id="@+id/ViewPDFFecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:text="FECHA"
-                    android:textSize="6sp" />
+                    android:textSize="6sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/editTextText"
+                    android:id="@+id/EditPDFFecha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:inputType="text"
                     android:text="Name"
                     android:textSize="6sp" />
@@ -257,22 +283,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="@drawable/border">
 
                 <TextView
                     android:id="@+id/ViewPDFLocalidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:text="LOCALIDAD"
-                    android:textSize="6sp" />
+                    android:textSize="6sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/editTextText2"
+                    android:id="@+id/EditPDFLocalidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:inputType="text"
                     android:text="Name"
                     android:textSize="6sp" />
@@ -283,22 +314,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="@drawable/border">
 
                 <TextView
                     android:id="@+id/ViewPDFBarrio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:text="BARRIO"
-                    android:textSize="6sp" />
+                    android:textSize="6sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/editTextText3"
+                    android:id="@+id/EditPDFBarrio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:inputType="text"
                     android:text="Name"
                     android:textSize="6sp" />
@@ -309,22 +345,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="@drawable/border">
 
                 <TextView
                     android:id="@+id/ViewPDFDiseno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:text="ID DISEÑO"
-                    android:textSize="6sp" />
+                    android:textSize="6sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/editTextText4"
+                    android:id="@+id/EditPDFDiseno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:inputType="text"
                     android:text="Name"
                     android:textSize="6sp" />
@@ -356,56 +397,61 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/ViewPDFDatosPredio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:text="2. DATOS DEL PREDIO"
-                    android:textSize="8sp" />
+                    android:textSize="6sp"
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/border">
 
                     <!--textviews nombre propietario, telefono, email-->
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="69dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
                         android:orientation="vertical">
 
 
                         <TextView
-                            android:id="@+id/textView14"
+                            android:id="@+id/ViewPDFNombrePropietario"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
-                            android:text="Nombre Propietario"
+                            android:text="Nombre Propietario:"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/ViewPDFTelefono"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
-                            android:text="Teléfono"
+                            android:text="Teléfono:"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView16"
+                            android:id="@+id/ViewPDFCorreo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
-                            android:text="Correo electrónico"
+                            android:text="Correo electrónico:"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView17"
+                            android:id="@+id/ViewPDFDireccion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/noto_sans"
-                            android:text="Dirección"
+                            android:text="Dirección:"
                             android:textSize="6sp" />
                     </LinearLayout>
 
@@ -417,44 +463,44 @@
 
 
                         <TextView
-                            android:id="@+id/editTextText5"
+                            android:id="@+id/EditPDFNombrePropietario"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="4sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText6"
+                            android:id="@+id/EditPDFTelefono"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="4sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText7"
+                            android:id="@+id/EditPDFCorreo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="4sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText8"
+                            android:id="@+id/EditPDFDireccion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:inputType="text"
                             android:text="Name"
-                            android:textSize="4sp" />
+                            android:textSize="6sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -462,92 +508,105 @@
                 <!--layout Checkboxes servicios-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="118dp"
+                    android:background="@drawable/border"
                     android:orientation="horizontal">
 
                     <!--layout Checkboxes nombres servicios-->
                     <LinearLayout
-                        android:layout_width="70dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
                         android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/ViewCeldapivote"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="10sp" />
 
                         <TextView
-                            android:id="@+id/textView18"
+                            android:id="@+id/ViewPDFAgua"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4sp"
                             android:fontFamily="@font/noto_sans"
                             android:text="1. Agua"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView19"
+                            android:id="@+id/ViewPDFAlcantarillado"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4sp"
                             android:fontFamily="@font/noto_sans"
                             android:text="2. Alcantarillado"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView20"
+                            android:id="@+id/ViewPDFEnergia"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
                             android:fontFamily="@font/noto_sans"
                             android:text="3. Energía"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView21"
+                            android:id="@+id/ViewPDFTelefonos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
                             android:text="4. Teléfonos"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/ViewPDFGas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="6sp"
                             android:fontFamily="@font/noto_sans"
                             android:text="5. Gas"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView23"
+                            android:id="@+id/ViewPDFTics"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="6sp"
                             android:fontFamily="@font/noto_sans"
                             android:text="6. TICS"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView24"
+                            android:id="@+id/ViewPDFLicConstruccion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
                             android:fontFamily="@font/noto_sans"
                             android:text="7. Licencia de construcción"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
                     </LinearLayout>
 
                     <!--layout Checkboxes servicios "SI"-->
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="22dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView26"
+                            android:id="@+id/ViewPDFtxtSI"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/border"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:text="SI"
-                            android:textSize="6sp" />
+                            android:textSize="6sp"
+                            android:textStyle="bold" />
 
                         <CheckBox
-                            android:id="@+id/checkBox"
+                            android:id="@+id/CheckBoxSIAgua"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
@@ -555,28 +614,28 @@
                             android:textSize="14sp" />
 
                         <CheckBox
-                            android:id="@+id/checkBox2"
+                            android:id="@+id/CheckBoxSIAlcantarillado"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox3"
+                            android:id="@+id/CheckBoxSIEnergia"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox4"
+                            android:id="@+id/CheckBoxSITelefonos"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox5"
+                            android:id="@+id/CheckBoxSIGas"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:minHeight="28dp"
@@ -584,14 +643,14 @@
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox6"
+                            android:id="@+id/CheckBoxSITics"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox7"
+                            android:id="@+id/CheckBoxSILicConstruccion"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
@@ -600,62 +659,66 @@
 
                     <!--layout Checkboxes servicios "NO"-->
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="21dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView27"
+                            android:id="@+id/ViewPDFtxtNO"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/border"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:text="NO"
-                            android:textSize="6sp" />
+                            android:textSize="6sp"
+                            android:textStyle="bold" />
 
                         <CheckBox
-                            android:id="@+id/checkBox8"
+                            android:id="@+id/CheckBoxNOAgua"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox9"
+                            android:id="@+id/CheckBoxNOAlcantarillado"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox10"
+                            android:id="@+id/CheckBoxNOEnergia"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox11"
+                            android:id="@+id/CheckBoxNOTelefonos"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox12"
+                            android:id="@+id/CheckBoxNOGas"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox13"
+                            android:id="@+id/CheckBoxNOTics"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox14"
+                            android:id="@+id/CheckBoxNOLicConstruccion"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
@@ -670,81 +733,96 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView28"
+                            android:id="@+id/ViewPDFtxtObservaciones"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/border"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:text="OBSERVACIONES"
-                            android:textSize="8sp" />
+                            android:textSize="6sp"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/editTextText9"
+                            android:id="@+id/EditPDFObservacionAgua"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:gravity="center"
                             android:inputType="text"
                             android:text="No hay observaciones"
-                            android:textSize="4sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText10"
+                            android:id="@+id/EditPDFObservacionAlcantarillado"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="6sp"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
                             android:gravity="center"
                             android:inputType="text"
                             android:text="No hay observaciones"
-                            android:textSize="4sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText11"
+                            android:id="@+id/EditPDFObservacionEnergia"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:inputType="text"
                             android:text="No hay observaciones"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText12"
+                            android:id="@+id/EditPDFObservacionTelefonos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="6sp"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:inputType="text"
                             android:text="No hay observaciones"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText13"
+                            android:id="@+id/EditPDFObservacionGas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="6sp"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:inputType="text"
                             android:text="No hay observaciones"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText14"
+                            android:id="@+id/EditPDFObservacionTics"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="6sp"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:inputType="text"
                             android:text="No hay observaciones"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/editTextText15"
+                            android:id="@+id/EditPDFObservacionLicConstruccion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="6sp"
                             android:ems="10"
                             android:fontFamily="@font/noto_sans"
+                            android:gravity="center"
                             android:inputType="text"
                             android:text="No hay observaciones"
                             android:textSize="6sp" />
@@ -764,20 +842,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/border"
+                >
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/ViewPDFFotoFachada1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:text="1. REGISTRO FOTOGRÁFICO DE FACHADA"
-                    android:textSize="6sp" />
+                    android:textSize="6sp"
+                    android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/EditPDFFotoFachada1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
                     android:src="@drawable/joycoprov" />
 
             </LinearLayout>
@@ -803,7 +888,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/border">
 
 
                     <!--layout Views Uso actual-->
@@ -814,74 +900,96 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView33"
+                            android:id="@+id/ViewPDFUsoActual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginRight="-1dp"
+                            android:background="@drawable/border"
+                            android:gravity="center"
                             android:text="USO ACTUAL"
+                            android:textSize="6sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/ViewPDFResidencial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="4dp"
+                            android:text="1. Residencial"
                             android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/ViewPDFComercial"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. Residencial"
-                            android:textSize="8sp" />
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="2. Comercial"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView13"
+                            android:id="@+id/ViewPDFIndustrial"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="6dp"
                             android:text="3. Industrial"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView25"
+                            android:id="@+id/ViewPDFInstitucional"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
                             android:text="4. Institucional"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView29"
+                            android:id="@+id/ViewPDFRecreacional"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
                             android:text="5. Recreacional"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView30"
+                            android:id="@+id/ViewPDFInteresCultural"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
                             android:text="6. Bien de interés cultural"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView31"
+                            android:id="@+id/ViewPDFMixto"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="7dp"
                             android:text="7. Mixto"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView32"
+                            android:id="@+id/ViewPDFOtro"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="8. ¿Otro?"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView4"
+                            android:id="@+id/ViewPDFCual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="¿Cuál?"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
                     </LinearLayout>
 
                     <!--layout Checkboxes Uso actual-->
@@ -889,66 +997,73 @@
                     <LinearLayout
                         android:layout_width="59dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@drawable/border">
+
+                        <TextView
+                            android:id="@+id/comodinblanco1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="6sp" />
 
                         <CheckBox
-                            android:id="@+id/checkBox15"
+                            android:id="@+id/CheckBoxResidencial"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox16"
+                            android:id="@+id/CheckBoxComercial"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox17"
+                            android:id="@+id/CheckBoxIndustrial"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox18"
+                            android:id="@+id/CheckBoxInstitucional"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox19"
+                            android:id="@+id/CheckBoxRecreacional"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox20"
+                            android:id="@+id/CheckBoxInteresCultural"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox21"
+                            android:id="@+id/CheckBoxMixto"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <CheckBox
-                            android:id="@+id/checkBox22"
+                            android:id="@+id/CheckBoxOtro"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
                             android:scaleY="0.5" />
 
                         <TextView
-                            android:id="@+id/editTextText17"
+                            android:id="@+id/EditPDFCual"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -968,32 +1083,37 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textView34"
+                            android:id="@+id/ViewPDFAccesoVehicular"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
                             android:text="ACCESO VEHICULAR"
-                            android:textSize="8sp" />
+                            android:textSize="6sp"
+                            android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView35"
+                            android:id="@+id/ViewPDFGaraje"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="4sp"
                             android:text="Garaje:"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView36"
+                            android:id="@+id/ViewPDFUsoComercial"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
                             android:text="Uso Comercial:"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                         <TextView
-                            android:id="@+id/textView38"
+                            android:id="@+id/ViewPDFUsoGaraje"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="5sp"
                             android:text="Uso del garaje:"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -1001,8 +1121,14 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
+                        <TextView
+                            android:id="@+id/comodinblanco2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="6sp" />
+
                         <CheckBox
-                            android:id="@+id/checkBox24"
+                            android:id="@+id/CheckBoxGaraje"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
@@ -1010,7 +1136,7 @@
                             android:text="Sí" />
 
                         <CheckBox
-                            android:id="@+id/checkBox25"
+                            android:id="@+id/CheckBoxUsoComercial"
                             android:layout_width="match_parent"
                             android:layout_height="15dp"
                             android:scaleX="0.5"
@@ -1018,14 +1144,14 @@
                             android:text="Sí" />
 
                         <TextView
-                            android:id="@+id/editTextText16"
+                            android:id="@+id/EditPDFUsoGaraje"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:gravity="center"
                             android:inputType="text"
                             android:text="Uso"
-                            android:textSize="8sp" />
+                            android:textSize="6sp" />
 
                     </LinearLayout>
 
@@ -1048,16 +1174,20 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView37"
+                android:id="@+id/ViewPDFDescripcionPredio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3. DESCRIPCIÓN Y ESTADO DEL PREDIO ANTES DE INTERVENIR EL ESPACIO PÚBLICO"
-                android:textSize="6sp" />
+                android:background="@drawable/border"
+                android:text="   3. DESCRIPCIÓN Y ESTADO DEL PREDIO ANTES DE INTERVENIR EL ESPACIO PÚBLICO"
+                android:textSize="6sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/editTextText18"
+                android:id="@+id/EditPDFDescripcionPredio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
                 android:ems="10"
                 android:inputType="textMultiLine"
                 android:text="Se realiza acta de vecindad en predio ubicado en el conjunto residencial Mirandela 7, el cual presenta fachada en ladrillo prensado en buenas condiciones, el uso y desgaste es natural por el tiempo de exposición la intemperie, cuenta con zonas de cerramiento en reja de estructura metálica en óptimas condiciones; andén con zonas en concreto al igual que sardinel, presentan desportillamientos generalizados, algunas tabletas del andén se encuentran fisuradas y desportilladas. Se pueden evidenciar diferentes secciones con plantas decorativas de jardín, estas se encuentran en buenas condiciones, cabe resaltar que algunas secciones del anden presentan empozamientos por hundimiento del material de revestimiento. Se evidencia zona de este con sección en zona verde, la cual se encuentra en óptimas condiciones, estas zonas cuentan con la presencia de individuos arbóreos.  El conjunto residencial presenta portería con fachada en ladrillo al igual que el resto de la zona externa del predio, cuenta con acceso vehicular con estructura metálica en buenas condiciones, puerta de acceso a la portería del conjunto en vidrio de seguridad, adicionalmente se observa ventana metálica con vidrio en buenas condiciones, cuenta con un ante techo sobre la misma en estructura metálica y policarbonato, al acceso vehicular del conjunto se evidencia rampa en adoquín en buenas condiciones, en general los espacios se encuentran en buenas condiciones, el desgaste presentado en algunas de estas es natural."
@@ -1075,12 +1205,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@drawable/border">
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/EditPDFFotoFachada2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
                         android:src="@drawable/joycoprov" />
                 </LinearLayout>
 
@@ -1090,12 +1223,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:background="@drawable/border">
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/EditPDFFotoFachada3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
                         android:src="@drawable/joycoprov" />
                 </LinearLayout>
 
@@ -1115,17 +1251,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView39"
+                android:id="@+id/ViewPDFFechaLlenado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos,    vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a los ____días del mes de __Junio__ de __2022__"
-                android:textSize="4sp" />
+                android:textSize="4sp"
+                android:background="@drawable/border"/>
 
             <!-- layout firmas 1 y 2 -->
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="53dp"
                 android:orientation="horizontal">
 
                 <!-- layout firma 1-->
@@ -1136,29 +1273,33 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView40"
+                        android:id="@+id/ViewPDFPropietario"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:text="PROPIETARIO Y/O ENCARGADO:"
-                        android:textSize="6sp" />
+                        android:textSize="4sp"
+                        android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/EditPDFFirmaPropietario"
                         android:layout_width="match_parent"
                         android:layout_height="36dp"
                         android:src="@drawable/joycoprov" />
 
                     <TextView
-                        android:id="@+id/textView42"
+                        android:id="@+id/EditPDFNombrePropietarioFirma"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:text="Uberney Giraldo"
                         android:textSize="4sp" />
 
                     <TextView
-                        android:id="@+id/textView43"
+                        android:id="@+id/ViewPDFAtiendeVisita"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:text="Persona quien atiende la visita"
                         android:textSize="4sp" />
                 </LinearLayout>
@@ -1171,27 +1312,28 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView41"
+                        android:id="@+id/ViewPDFElaboro1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="ELABORÓ"
-                        android:textSize="6sp" />
+                        android:textSize="4sp"
+                        android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/imageView7"
+                        android:id="@+id/EditPDFFirmaElaboro1"
                         android:layout_width="match_parent"
                         android:layout_height="36dp"
                         android:src="@drawable/joycoprov" />
 
                     <TextView
-                        android:id="@+id/textView45"
+                        android:id="@+id/ViewPDFNombreElaboro1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Alba Avendaño"
                         android:textSize="4sp" />
 
                     <TextView
-                        android:id="@+id/textView46"
+                        android:id="@+id/ViewPDFCargoElaboro1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Residente Técnico - Contratista"
@@ -1215,23 +1357,34 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
 
+                    <TextView
+                        android:id="@+id/ViewPDFElaboro2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:text="ELABORÓ"
+                        android:textSize="4sp"
+                        android:textStyle="bold" />
+
                     <ImageView
-                        android:id="@+id/imageView9"
+                        android:id="@+id/EditPDFFirmaElaboro2"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:src="@drawable/joycoprov" />
 
                     <TextView
-                        android:id="@+id/textView48"
+                        android:id="@+id/ViewPDFNombreElaboro2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:text="Eliana Julieth Fajardo "
                         android:textSize="4sp" />
 
                     <TextView
-                        android:id="@+id/textView51"
+                        android:id="@+id/ViewPDFCargoElaboro2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
                         android:text="Residente Social - Contratista"
                         android:textSize="4sp" />
                 </LinearLayout>
@@ -1249,11 +1402,12 @@
         </LinearLayout>
 
             <TextView
-                android:id="@+id/textView52"
+                android:id="@+id/ViewPDFNormativaFormato"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="El uso y distribución del presente formato se realiza para la ejecución de actividades del área social del contrato 2021 - 2659  instaurado entre la Union Temporal Señalizando Zona Norte y la Secretaria Distrital de Movilidad y cuenta con la respectiva revisión y aprobación de la interventoría Soyco BIC SAS."
-                android:textSize="4sp" />
+                android:textSize="4sp"
+                android:background="@drawable/border"/>
 
         </LinearLayout>
 
