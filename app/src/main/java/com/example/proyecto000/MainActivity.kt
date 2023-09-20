@@ -2,7 +2,9 @@ package com.example.proyecto000
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.util.Log
 import android.view.MotionEvent
 import android.view.View
@@ -16,14 +18,18 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var selectedUr1: Uri
+    lateinit var selectedUr2: Uri
+    lateinit var selectedUr3: Uri
     //Variables fotos
     val picMedia1 = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri->
         if(uri !=null){
             //Imagen seleccionado
+            selectedUr1 = uri
             Foto1Viewer.setImageURI(uri)
 
         }else{
@@ -40,6 +46,7 @@ class MainActivity : AppCompatActivity() {
     val picMedia2 = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri->
         if(uri !=null){
             //Imagen seleccionado
+            selectedUr2 = uri
             Foto2Viewer.setImageURI(uri)
 
         }else{
@@ -56,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     val picMedia3 = registerForActivityResult(ActivityResultContracts.PickVisualMedia()){ uri->
         if(uri !=null){
             //Imagen seleccionado
+            selectedUr3 = uri
             Foto3Viewer.setImageURI(uri)
 
         }else{
@@ -76,14 +84,14 @@ class MainActivity : AppCompatActivity() {
 
     //fin fotos
 
-    var txtFecha: EditText?=null //se crea una variable de tipo edición de texto que inicialmente es null
+    lateinit var txtFecha: EditText //se crea una variable de tipo edición de texto que inicialmente es null
     var txtLocalidad: EditText?=null
     var txtBarrio: EditText?=null
-    var txtIDdiseno: EditText?=null
+    lateinit var txtIDdiseno: EditText
     var txtPropietariopredio: EditText?=null
     var txtTelefonopredio: EditText?=null
     var txtCorreopredio: EditText?=null
-    var txtDireccionpredio: EditText?=null
+    lateinit var txtDireccionpredio: EditText
     var txtOtrouso: EditText?=null
     lateinit var txtDescripcion: EditText
 
@@ -148,6 +156,12 @@ class MainActivity : AppCompatActivity() {
             }
             false
         })
+
+        //datePicker
+        txtFecha.setOnClickListener {showDatePickerDialog()}
+
+
+        //Fin DatePicker
 
 
         estAgua = findViewById(R.id.estAgua) //enlazo la variable con el checkbox del layout
@@ -321,17 +335,101 @@ class MainActivity : AppCompatActivity() {
         txtOtrouso?.setText(otrouso)
 
         //persistencia de descripcion
-        txtDescripcion?.setText(descripcion)
 
 
         //conectamos el boton firma para que redirija a la otra activity
         val btnFirma= findViewById<Button>(R.id.btnFirma)
 
         btnFirma.setOnClickListener {
-            startActivity(Intent(this, FirmActivity::class.java))
+            val Nombre_Carpeta =txtIDdiseno.text.toString()
+
+            if (!Nombre_Carpeta.isEmpty()) {
+
+                // Obtener la carpeta correspondiente
+                val directory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), Nombre_Carpeta)
+
+                // Verificar si la carpeta ya existe o crearla si no existe
+                if (!directory.exists()) {
+                    if (directory.mkdirs()) {
+                        // Carpeta creada exitosamente
+                        Toast.makeText(this, "Carpeta creada: $Nombre_Carpeta", Toast.LENGTH_SHORT).show()
+                    } else {
+                        // Error al crear la carpeta
+                        Toast.makeText(this, "Error al crear la carpeta", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    // La carpeta ya existe
+                    Toast.makeText(this, "La carpeta ya existe: $Nombre_Carpeta", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                // El campo de texto está vacío
+                Toast.makeText(this, "Ingrese un nombre para la carpeta", Toast.LENGTH_SHORT).show()
+            }
+
+            val Nombre_PDF = Nombre_Carpeta+"_"+txtDireccionpredio.text.toString()
+
+            Toast.makeText(this, "R= $Nombre_Carpeta , N= $Nombre_PDF", Toast.LENGTH_SHORT).show()
+
+
+            val intent = Intent(this, FirmActivity::class.java)
+            //Inicio Txt
+
+            intent.putExtra("Ruta_PDF",Nombre_Carpeta)
+            intent.putExtra("Nombre_PDF",Nombre_PDF)
+            intent.putExtra("Fecha",txtFecha.text.toString())
+            intent.putExtra("Localidad",txtLocalidad?.text.toString())
+            intent.putExtra("Barrio", txtBarrio?.text.toString())
+            intent.putExtra("Correo",txtCorreopredio?.text.toString())
+            intent.putExtra("Direccion",txtDireccionpredio.text.toString() )
+            intent.putExtra("ID",txtIDdiseno.text.toString() )
+            intent.putExtra("Nombre_Propietario",txtPropietariopredio?.text.toString() )
+            intent.putExtra("Telefono_Predio", txtTelefonopredio?.text.toString())
+            intent.putExtra("Ur1",selectedUr1.toString())
+            intent.putExtra("Ur2",selectedUr2.toString())
+            intent.putExtra("Ur3",selectedUr3.toString())
+            //Boleanos
+
+            intent.putExtra("check_Agua", estAgua.isChecked)
+            intent.putExtra("check_Alcantarillado", estAlcantarillado.isChecked)
+            intent.putExtra("check_Energia", estEnergia.isChecked)
+            intent.putExtra("check_Telefonos", estTelefonos.isChecked)
+            intent.putExtra("check_Gas", estGas.isChecked)
+            intent.putExtra("check_Tics", estTics.isChecked)
+            intent.putExtra("check_Lconstruccion", estLconstruccion.isChecked)
+
+            intent.putExtra("check_Residencial", estResidencial.isChecked)
+            intent.putExtra("check_Comercial", estComercial.isChecked)
+            intent.putExtra("check_Industrial", estIndustrial.isChecked)
+            intent.putExtra("check_Institucional", estInstitucional.isChecked)
+            intent.putExtra("check_Recreacional", estRecreacional.isChecked)
+            intent.putExtra("check_Interescultural", estInterescultural.isChecked)
+            intent.putExtra("check_Mixto", estMixto.isChecked)
+            intent.putExtra("check_Otrouso", estOtrouso.isChecked)
+
+            intent.putExtra("check_Garaje", estGaraje.isChecked)
+            intent.putExtra("check_Usocomercial", estUsocomercial.isChecked)
+
+
+
+            //Fin txt
+
+            startActivity(intent)
+
         }
 
     }
+
+    private fun showDatePickerDialog() {
+
+        val datePicker = DatePickerFragment {day,month,year->onDateSelected( day, month , year)}
+        datePicker.show(supportFragmentManager, "DatePicker")
+
+
+    }
+    fun onDateSelected(day:Int,month:Int,year:Int){
+        txtFecha.setText("$day/$month/$year")
+    }
+
 
 
 
@@ -469,8 +567,8 @@ class MainActivity : AppCompatActivity() {
 
 
     fun guardaryactualizar(view: View) {
-        guardar(view)
-        actualizar(view)
+        val dialogFragment = CantidadPisosDialogFragment()
+        dialogFragment.show(supportFragmentManager, "formulario_dialog")
     }
 
     //se tiene que crear una función para el boton generar PDF en donde se llame a guardar y se guarder todos los datos en general

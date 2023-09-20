@@ -55,7 +55,6 @@
                     android:id="@+id/ViewPDFUnion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-1dp"
                     android:layout_marginBottom="-1dp"
                     android:fontFamily="@font/noto_sans"
                     android:text="UNIÓN TEMPORAL SEÑALIZANDO ZONA NORTE"
@@ -85,7 +84,6 @@
                     <LinearLayout
                         android:layout_width="156dp"
                         android:layout_height="match_parent"
-                        android:layout_marginTop="-1dp"
                         android:layout_marginRight="-1dp"
                         android:layout_marginBottom="-2dp"
                         android:background="@drawable/border"
@@ -159,7 +157,6 @@
                         android:layout_width="172dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="-1dp"
-                        android:layout_marginTop="-1dp"
                         android:layout_marginRight="-1dp"
                         android:layout_marginBottom="-2dp"
                         android:background="@drawable/border"
@@ -1211,8 +1208,9 @@
                     android:id="@+id/EditPDFDescripcionPredio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="2dp"
+                    android:background="@drawable/border"
+                    android:layout_marginTop="-1dp"
+                    android:layout_marginBottom="-1dp"
                     android:ems="10"
                     android:inputType="textMultiLine"
                     android:text="Se realiza acta de vecindad en predio ubicado en el conjunto residencial Mirandela 7, el cual presenta fachada en ladrillo prensado en buenas condiciones, el uso y desgaste es natural por el tiempo de exposición la intemperie, cuenta con zonas de cerramiento en reja de estructura metálica en óptimas condiciones; andén con zonas en concreto al igual que sardinel, presentan desportillamientos generalizados, algunas tabletas del andén se encuentran fisuradas y desportilladas. Se pueden evidenciar diferentes secciones con plantas decorativas de jardín, estas se encuentran en buenas condiciones, cabe resaltar que algunas secciones del anden presentan empozamientos por hundimiento del material de revestimiento. Se evidencia zona de este con sección en zona verde, la cual se encuentra en óptimas condiciones, estas zonas cuentan con la presencia de individuos arbóreos.  El conjunto residencial presenta portería con fachada en ladrillo al igual que el resto de la zona externa del predio, cuenta con acceso vehicular con estructura metálica en buenas condiciones, puerta de acceso a la portería del conjunto en vidrio de seguridad, adicionalmente se observa ventana metálica con vidrio en buenas condiciones, cuenta con un ante techo sobre la misma en estructura metálica y policarbonato, al acceso vehicular del conjunto se evidencia rampa en adoquín en buenas condiciones, en general los espacios se encuentran en buenas condiciones, el desgaste presentado en algunas de estas es natural."
@@ -1236,8 +1234,11 @@
 
                         <ImageView
                             android:id="@+id/EditPDFFotoFachada2"
+
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
                             android:layout_marginLeft="2dp"
                             android:layout_marginRight="2dp"
                             android:src="@drawable/joycoprov" />
@@ -1257,6 +1258,8 @@
                             android:id="@+id/EditPDFFotoFachada3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
                             android:layout_marginLeft="2dp"
                             android:layout_marginRight="2dp"
                             android:src="@drawable/joycoprov" />
@@ -1273,6 +1276,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/headerLayout"
+            android:background="@drawable/border"
             android:layout_marginTop="-1dp"
             android:orientation="vertical"
             >
@@ -1281,7 +1285,6 @@
                 android:id="@+id/ViewPDFFechaLlenado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-1dp"
                 android:background="@drawable/border"
                 android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos,    vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a los ____días del mes de __Junio__ de __2022__"
                 android:textSize="4sp" />
@@ -1313,6 +1316,7 @@
                     <ImageView
                         android:id="@+id/EditPDFFirmaPropietario"
                         android:layout_width="match_parent"
+                        android:layout_gravity="left"
                         android:layout_height="36dp"
                         android:src="@drawable/joycoprov" />
 
@@ -1351,8 +1355,7 @@
                     <ImageView
                         android:id="@+id/EditPDFFirmaElaboro1"
                         android:layout_width="match_parent"
-                        android:layout_height="36dp"
-                        android:src="@drawable/joycoprov" />
+                        android:layout_height="36dp" />
 
                     <TextView
                         android:id="@+id/ViewPDFNombreElaboro1"
@@ -1399,7 +1402,9 @@
                         android:id="@+id/EditPDFFirmaElaboro2"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
-                        android:src="@drawable/joycoprov" />
+                        android:layout_marginLeft="60dp"
+                        android:layout_marginRight="60dp"
+                        android:src="@drawable/firmaeliana" />
 
                     <TextView
                         android:id="@+id/ViewPDFNombreElaboro2"
@@ -1428,7 +1433,6 @@
                 </LinearLayout>
 
             </LinearLayout>
-
             <TextView
                 android:id="@+id/ViewPDFNormativaFormato"
                 android:layout_width="match_parent"
