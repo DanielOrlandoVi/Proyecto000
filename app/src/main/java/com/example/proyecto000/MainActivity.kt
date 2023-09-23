@@ -13,7 +13,6 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.ScrollView
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -21,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.io.File
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),PisosFormularioListener {
     lateinit var selectedUr1: Uri
     lateinit var selectedUr2: Uri
     lateinit var selectedUr3: Uri
@@ -337,6 +336,14 @@ class MainActivity : AppCompatActivity() {
         //persistencia de descripcion
 
 
+
+
+            // ...
+
+
+
+
+
         //conectamos el boton firma para que redirija a la otra activity
         val btnFirma= findViewById<Button>(R.id.btnFirma)
 
@@ -569,6 +576,12 @@ class MainActivity : AppCompatActivity() {
     fun guardaryactualizar(view: View) {
         val dialogFragment = CantidadPisosDialogFragment()
         dialogFragment.show(supportFragmentManager, "formulario_dialog")
+    }
+
+    override fun onDatosPisosConfirmados(datoPisos: String) {
+
+        Toast.makeText(this, "Dato de pisos recibido: $datoPisos", Toast.LENGTH_SHORT).show()
+
     }
 
     //se tiene que crear una función para el boton generar PDF en donde se llame a guardar y se guarder todos los datos en general

@@ -1,14 +1,19 @@
 package com.example.proyecto000
 
+import android.R
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.text.InputType
+
 import android.widget.EditText
+
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 
-class CantidadPisosDialogFragment : DialogFragment() {
+
+class CantidadPisosDialogFragment : DialogFragment()  {
+
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val builder = AlertDialog.Builder(requireActivity())
 
@@ -20,18 +25,25 @@ class CantidadPisosDialogFragment : DialogFragment() {
 
         builder.setPositiveButton("Aceptar") { dialog, _ ->
             val cantidadPisos = input.text.toString().toInt()
-            // Llamar a una función para crear el formulario para cada piso
             createFormularioPorPisos(requireActivity().supportFragmentManager, cantidadPisos)
         }
 
         return builder.create()
     }
-
 }
 
 fun createFormularioPorPisos(fragmentManager: FragmentManager, cantidadPisos: Int) {
     for (i in 1..cantidadPisos) {
         val dialogFragment = PisoFormularioDialogFragment(i)
+
+        // Establece el PisosFormularioListener en cada instancia
+
         dialogFragment.show(fragmentManager, "formulario_piso_$i")
     }
 }
+
+
+
+
+
+
