@@ -30,13 +30,13 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener {
             //Imagen seleccionado
             selectedUr1 = uri
             Foto1Viewer.setImageURI(uri)
-
-        }else{
-            //No imagen
-            Log.i("aris","no seleccionado")
         }
 
+
+
+
     }
+
 
     lateinit var btn_foto1: Button
     lateinit var Foto1Viewer: ImageView
@@ -574,15 +574,18 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener {
 
 
     fun guardaryactualizar(view: View) {
-        val dialogFragment = CantidadPisosDialogFragment()
+        val dialogFragment = PisoFormularioDialogFragment(4)
+        dialogFragment.pisosFormularioListener = this
         dialogFragment.show(supportFragmentManager, "formulario_dialog")
-    }
 
+    }
     override fun onDatosPisosConfirmados(datoPisos: String) {
 
-        Toast.makeText(this, "Dato de pisos recibido: $datoPisos", Toast.LENGTH_SHORT).show()
-
+        var descripcion = findViewById<EditText>(R.id.txtDescripcion)
+        descripcion.setText(datoPisos + "Hola")
     }
+
+
 
     //se tiene que crear una función para el boton generar PDF en donde se llame a guardar y se guarder todos los datos en general
     //esta función pues llama a guardar()

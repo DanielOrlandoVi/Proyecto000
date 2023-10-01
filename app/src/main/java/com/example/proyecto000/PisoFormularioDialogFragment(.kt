@@ -3,6 +3,7 @@ package com.example.proyecto000
 import android.R
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.fragment.app.DialogFragment
@@ -16,12 +17,10 @@ import org.w3c.dom.Text
 
 class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment() {
 
-    private var listener: PisosFormularioListener? = null
-
-    private var pisosFormularioListener: PisosFormularioListener? = null
-    fun setPisosFormularioListener(listener: PisosFormularioListener) {
+    var pisosFormularioListener: PisosFormularioListener? = null
+    /*fun setPisosFormularioListener(listener: PisosFormularioListener) {
         this.listener = listener
-    }
+    }*/
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -295,6 +294,21 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
 
 interface PisosFormularioListener {
     fun onDatosPisosConfirmados(datoPisos: String)
+}
+
+class PisosFormularioDialogFragment : DialogFragment() {
+    var pisosFormularioListener: PisosFormularioListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            pisosFormularioListener = context as PisosFormularioListener
+        } catch (e: ClassCastException) {
+            throw ClassCastException((context.toString() +
+                    " debe implementar PisosFormularioListener"))
+        }
+    }
+
 }
 
 
