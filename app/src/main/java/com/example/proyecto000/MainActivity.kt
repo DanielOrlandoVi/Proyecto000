@@ -17,10 +17,14 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import java.io.File
 
 
-class MainActivity : AppCompatActivity(),PisosFormularioListener {
+class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosListener {
+
+
+
     lateinit var selectedUr1: Uri
     lateinit var selectedUr2: Uri
     lateinit var selectedUr3: Uri
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener {
             //Imagen seleccionado
             selectedUr1 = uri
             Foto1Viewer.setImageURI(uri)
+        }else{
+            Log.i("aris","no seleccionado")
         }
 
 
@@ -126,7 +132,7 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        var texto =""
 
 
 
@@ -333,17 +339,6 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener {
 
         txtOtrouso?.setText(otrouso)
 
-        //persistencia de descripcion
-
-
-
-
-            // ...
-
-
-
-
-
         //conectamos el boton firma para que redirija a la otra activity
         val btnFirma= findViewById<Button>(R.id.btnFirma)
 
@@ -438,153 +433,35 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener {
     }
 
 
-
-
-
-
-    fun guardar(view: View){ //al bttn no lo declaramos porque lo vamos a llamar con la función guardar
-        var pref=getSharedPreferences("datos_persona", Context.MODE_PRIVATE) //aquí vamos a guardar los datos en la llave principal datos_persona de forma privada
-        var editor=pref.edit() //creamos una variable editor en la que indicamos que vamos a editar lo que haya en pref
-
-
-
-        //Guardado de los datos base
-        editor.putString("fecha", txtFecha?.text.toString()) //ahora si en editor vamos a guardar los datos en este caso fecha primero el nombre de donde queremos guardar y luego la ubicacion y el como se quiere guardar (txt)
-        editor.putString("localidad", txtLocalidad?.text.toString())
-        editor.putString("barrio", txtBarrio?.text.toString())
-        editor.putString("iddiseno", txtIDdiseno?.text.toString())
-        editor.putString("propietariopredio", txtPropietariopredio?.text.toString())
-        editor.putString("telefonopredio", txtTelefonopredio?.text.toString())
-        editor.putString("correopredio", txtCorreopredio?.text.toString())
-        editor.putString("direccionpredio", txtDireccionpredio?.text.toString())
-        editor.putString("otrouso", txtOtrouso?.text.toString())
-
-
-        // Guardado de estado Checkboxes
-        val aguaestado= estAgua.isChecked
-        val alcantarilladoestado= estAlcantarillado.isChecked
-        val energiaestado= estEnergia.isChecked
-        val telefonosestado= estTelefonos.isChecked
-        val gasestado= estGas.isChecked
-        val ticsestado= estTics.isChecked
-        val lconstruccionestado= estLconstruccion.isChecked
-
-
-        val residencialestado= estResidencial.isChecked
-        val comercialestado= estComercial.isChecked
-        val industrialestado= estIndustrial.isChecked
-        val institucionalestado= estInstitucional.isChecked
-        val recreacionalestado= estRecreacional.isChecked
-        val interesculturalestado= estInterescultural.isChecked
-        val mixtoestado= estMixto.isChecked
-        val otrousoestado= estOtrouso.isChecked
-
-        val garajeestado= estGaraje.isChecked
-        val usocomercialestado= estUsocomercial.isChecked
-
-
-        var descripcion = findViewById<EditText>(R.id.txtDescripcion)
-
-
-        editor.putBoolean("aguaestado", aguaestado)
-        editor.putBoolean("alcantarilladoestado", alcantarilladoestado)
-        editor.putBoolean("energiaestado", energiaestado)
-        editor.putBoolean("telefonosestado", telefonosestado)
-        editor.putBoolean("gasestado", gasestado)
-        editor.putBoolean("ticsestado", ticsestado)
-        editor.putBoolean("lconstruccionestado", lconstruccionestado)
-
-        editor.putBoolean("residencialestado", residencialestado)
-        editor.putBoolean("comercialestado", comercialestado)
-        editor.putBoolean("industrialestado", industrialestado)
-        editor.putBoolean("institucionalestado", institucionalestado)
-        editor.putBoolean("recreacionalestado", recreacionalestado)
-        editor.putBoolean("interesculturalestado", interesculturalestado)
-        editor.putBoolean("mixtoestado", mixtoestado)
-        editor.putBoolean("otrousoestado", otrousoestado)
-
-        editor.putBoolean("garajeestado", garajeestado)
-        editor.putBoolean("usocomercialestado", usocomercialestado)
-
-
-
-
-        //luego guardamos la descripcion dada por el que llena el fomulario
-        editor.putString("descripcion", txtDescripcion?.text.toString()) //llevo el texto con la edicion base y la del usuario a editor
-        //ya tenemos Fecha dentro de editor ahora vamos a mandar los datos
-
-        editor.commit() //Enviamos los datos
-        editor.apply() //Enviamos los datos del checkbox
-        Toast.makeText(this,"Se guardaron los datos", Toast.LENGTH_LONG).show() //mostramos un mensaje de que si se guardaron
-        Toast.makeText(this,"${descripcion.text}", Toast.LENGTH_LONG).show() //verifico que la DESCRIPCION COMPLETA Y FINAL se guarda correctamente
-
-    }
-
-    fun actualizar(view: View){
-
-        //en el override sacabamos automaticamente los datos con persistencia al INICIARSE la app, aquí lo que hacemos es
-        //que al darse el evento actualizar, pase se actualice unicamente la descripción, para eso tenemos que volver a llamar los datos
-        txtFecha=findViewById(R.id.txtFecha)//Esa variable la conectamos con el objeto del layout
-        txtLocalidad=findViewById(R.id.txtLocalidad)
-        txtBarrio=findViewById(R.id.txtBarrio)
-        txtDireccionpredio=findViewById(R.id.txtDireccionpredio)
-        txtPropietariopredio=findViewById(R.id.txtPropietariopredio)
-        txtTelefonopredio=findViewById(R.id.txtTelefonopredio)
-        txtCorreopredio= findViewById(R.id.txtCorreopredio)
-
-
-        var pref= getSharedPreferences("datos_persona", Context.MODE_PRIVATE)//Para indicar que se muestre el mensaje de guardar hasta el final de la actividad
-
-        var fecha= pref.getString("fecha","") //llamamos a Fecha y si esta vacio se devuelve un string vacio
-
-        var localidad= pref.getString("localidad","")
-
-        var barrio= pref.getString("barrio","")
-
-        var direccionpredio= pref.getString("direccionpredio","")
-
-        var propietariopredio= pref.getString("propietariopredio","")
-
-        var telefonopredio= pref.getString("telefonopredio", "")
-
-        var correopredio= pref.getString("correopredio", "")
-
-
-        var descripcion = findViewById<EditText>(R.id.txtDescripcion)
-
-        //al darle actualizar se edita el texto template primero con los datos base y luego por lo que el usuario vea necesario
-
-        //en caso de que vea un vacio al darle actualizar que lo señalize con raya al piso
-        val fechaTemp = fecha.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val localidadTemp = localidad.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val barrioTemp = barrio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val direccionpredioTemp= direccionpredio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val propietariopredioTemp= propietariopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val telefonopredioTemp= telefonopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
-        val correopredioTemp= correopredio.takeIf { !it.isNullOrEmpty() } ?: "________"
-
-        descripcion.setText("La información actualizada el $fechaTemp indica que el lugar se encuentra en la localidad de $localidadTemp, " +
-                "específicamente en el barrio $barrioTemp. La dirección exacta del lugar es $direccionpredioTemp. El propietario $propietariopredioTemp, " +
-                "puede ser contactado a través del número de teléfono $telefonopredioTemp o por el correo electrónico $correopredioTemp.\n" +
-                "El lugar se encuentra bajo las condiciones de …")
-
-        Toast.makeText(this,"${descripcion.text}", Toast.LENGTH_LONG).show() //vemos si el texto template con datos concatenados que guarda descripcion es el correcto
-
-    }
-
-
     fun guardaryactualizar(view: View) {
-        val dialogFragment = PisoFormularioDialogFragment(4)
-        dialogFragment.pisosFormularioListener = this
-        dialogFragment.show(supportFragmentManager, "formulario_dialog")
-
+        val canDialogFragment = CantidadPisosDialogFragment()
+        canDialogFragment.cantidadPisosListener= this
+        canDialogFragment.show(supportFragmentManager,"Indica la cantidad de pisos del predio")
     }
+
+    var aux =""
     override fun onDatosPisosConfirmados(datoPisos: String) {
-
         var descripcion = findViewById<EditText>(R.id.txtDescripcion)
-        descripcion.setText(datoPisos + "Hola")
+         aux = aux+" "+datoPisos
+        descripcion.setText("Se realiza acta de vencidad ubicado en predio ubicado en la direccion ${txtDireccionpredio.text} en el barrio ${txtBarrio?.text} el cual se encuentra en el siguiente estado: "+aux)
+
     }
 
+    override fun onDatosCantidadPisos(NumeroPisos: Int) {
+        createFormularioPorPisos(supportFragmentManager,NumeroPisos)
+    }
+
+
+    fun createFormularioPorPisos(fragmentManager: FragmentManager, cantidadPisos: Int) {
+        for (i in 1..cantidadPisos) {
+            val dialogFragment = PisoFormularioDialogFragment(i)
+            dialogFragment.pisosFormularioListener= this
+
+            // Establece el PisosFormularioListener en cada instancia
+
+            dialogFragment.show(fragmentManager, "formulario_piso_$i")
+        }
+    }
 
 
     //se tiene que crear una función para el boton generar PDF en donde se llame a guardar y se guarder todos los datos en general

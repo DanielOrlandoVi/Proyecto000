@@ -104,6 +104,8 @@
                             android:background="#30ffffff"
                             android:backgroundTint="@color/white"
                             android:ems="20"
+                            android:focusable="false"
+                            android:clickable="false"
                             android:hint="dd/mm/aaaa"
                             android:inputType="date"
                             android:textColor="@color/white"
@@ -950,7 +952,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:onClick="guardaryactualizar"
-                    android:text="Actualizar texto con nuevos datos" />
+                    android:text="Generar Descripcion" />
 
             </LinearLayout>
 
@@ -961,13 +963,6 @@
                 android:layout_marginTop="50dp"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btnGuardar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:onClick="guardar"
-                    android:text="Guardar" />
 
             </LinearLayout>
 
@@ -986,11 +981,7 @@
 
             </LinearLayout>
 
-
         </LinearLayout>
-
-
     </ScrollView>
-
 </LinearLayout>
 
