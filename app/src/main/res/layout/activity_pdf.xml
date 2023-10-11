@@ -1207,10 +1207,10 @@
                 <TextView
                     android:id="@+id/EditPDFDescripcionPredio"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
+                    android:layout_height="52dp"
                     android:layout_marginTop="-1dp"
                     android:layout_marginBottom="-1dp"
+                    android:background="@drawable/border"
                     android:ems="10"
                     android:inputType="textMultiLine"
                     android:text="Se realiza acta de vecindad en predio ubicado en el conjunto residencial Mirandela 7, el cual presenta fachada en ladrillo prensado en buenas condiciones, el uso y desgaste es natural por el tiempo de exposición la intemperie, cuenta con zonas de cerramiento en reja de estructura metálica en óptimas condiciones; andén con zonas en concreto al igual que sardinel, presentan desportillamientos generalizados, algunas tabletas del andén se encuentran fisuradas y desportilladas. Se pueden evidenciar diferentes secciones con plantas decorativas de jardín, estas se encuentran en buenas condiciones, cabe resaltar que algunas secciones del anden presentan empozamientos por hundimiento del material de revestimiento. Se evidencia zona de este con sección en zona verde, la cual se encuentra en óptimas condiciones, estas zonas cuentan con la presencia de individuos arbóreos.  El conjunto residencial presenta portería con fachada en ladrillo al igual que el resto de la zona externa del predio, cuenta con acceso vehicular con estructura metálica en buenas condiciones, puerta de acceso a la portería del conjunto en vidrio de seguridad, adicionalmente se observa ventana metálica con vidrio en buenas condiciones, cuenta con un ante techo sobre la misma en estructura metálica y policarbonato, al acceso vehicular del conjunto se evidencia rampa en adoquín en buenas condiciones, en general los espacios se encuentran en buenas condiciones, el desgaste presentado en algunas de estas es natural."
@@ -1293,7 +1293,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="-1dp"
                 android:orientation="horizontal">
 
@@ -1316,8 +1316,10 @@
                     <ImageView
                         android:id="@+id/EditPDFFirmaPropietario"
                         android:layout_width="match_parent"
+                        android:layout_height="26dp"
                         android:layout_gravity="left"
-                        android:layout_height="36dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
                         android:src="@drawable/joycoprov" />
 
                     <TextView
@@ -1355,7 +1357,9 @@
                     <ImageView
                         android:id="@+id/EditPDFFirmaElaboro1"
                         android:layout_width="match_parent"
-                        android:layout_height="36dp" />
+                        android:layout_height="26dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp" />
 
                     <TextView
                         android:id="@+id/ViewPDFNombreElaboro1"
@@ -1401,7 +1405,7 @@
                     <ImageView
                         android:id="@+id/EditPDFFirmaElaboro2"
                         android:layout_width="match_parent"
-                        android:layout_height="42dp"
+                        android:layout_height="25dp"
                         android:layout_marginLeft="60dp"
                         android:layout_marginRight="60dp"
                         android:src="@drawable/firmaeliana" />
@@ -1433,11 +1437,13 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <TextView
                 android:id="@+id/ViewPDFNormativaFormato"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
+                android:gravity="center"
                 android:text="El uso y distribución del presente formato se realiza para la ejecución de actividades del área social del contrato 2021 - 2659  instaurado entre la Union Temporal Señalizando Zona Norte y la Secretaria Distrital de Movilidad y cuenta con la respectiva revisión y aprobación de la interventoría Soyco BIC SAS."
                 android:textSize="4sp" />
 
@@ -1446,9 +1452,10 @@
 
         <Button
             android:id="@+id/btnPDF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Crear PDF" />
+            android:layout_width="69dp"
+            android:layout_height="25dp"
+            android:text="Crear PDF"
+            android:textSize="4sp" />
 
     </LinearLayout>
 
