@@ -179,7 +179,7 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
 
             //Spinner 7
             val Venta_Material = TextView(requireContext())
-            Venta_Material.text = "Color" // Puedes personalizar el texto del título
+            Venta_Material.text = "Material" // Puedes personalizar el texto del título
             linearLayout.addView(Venta_Material)
             val spinnerArray7 = opciones7 // Define las opciones del Spinner
             val spinnerAdapter7 =
@@ -314,34 +314,23 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
 
                }else{
 
+
                   Texto_generado= "En el piso ${numeroPiso.toString()} $valorSpinner1 balcon, con ventanas frabicadas en $valorSpinner2"
                }
 
                 pisosFormularioListener?.onDatosPisosConfirmados(Texto_generado)
 
             } else {
-                // Obtener el valor seleccionado en el Spinner 1
-                val valorSpinner1 = spinner1.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 2
-                val valorSpinner2 = spinner2.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 3
-                val valorSpinner3 = spinner3.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 4
-                val valorSpinner4 = spinner4.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 5
-                val valorSpinner5 = spinner5.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 6
-                val valorSpinner6 = spinner6.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 7
-                val valorSpinner7 = spinner7.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 8
-                val valorSpinner8 = spinner8.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 9
-                val valorSpinner9 = spinner9.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 10
-                val valorSpinner10 = spinner10.selectedItem.toString()
-                // Obtener el valor seleccionado en el Spinner 11
-                val valorSpinner11 = spinner11.selectedItem.toString()
+                val valorSpinner1 = reemplazarValor(spinner1.selectedItem.toString())
+                val valorSpinner2 = reemplazarValor(spinner2.selectedItem.toString())
+                val valorSpinner3 = reemplazarValor(spinner3.selectedItem.toString())
+                val valorSpinner4 = reemplazarValor(spinner4.selectedItem.toString())
+                val valorSpinner5 = reemplazarValor(spinner5.selectedItem.toString())
+                val valorSpinner6 = reemplazarValor(spinner1.selectedItem.toString())
+                val valorSpinner7 = reemplazarValor(spinner2.selectedItem.toString())
+                val valorSpinner8 = reemplazarValor(spinner3.selectedItem.toString())
+                val valorSpinner9 = reemplazarValor(spinner4.selectedItem.toString())
+                val valorSpinner10 = reemplazarValor(spinner5.selectedItem.toString())
             }
 
         }
@@ -352,6 +341,14 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
 
 interface PisosFormularioListener {
     fun onDatosPisosConfirmados(datoPisos: String)
+}
+
+fun reemplazarValor(valor: String): String {
+    return when (valor) {
+        "N/A" -> "No presenta"
+        "con" -> "Presenta"
+        else -> valor
+    }
 }
 
 class PisosFormularioDialogFragment : DialogFragment() {
@@ -370,15 +367,4 @@ class PisosFormularioDialogFragment : DialogFragment() {
     }
 
 }
-
-fun reemplazarValor(valor: String): String {
-    return when (valor) {
-        "N/A" -> "No presenta"
-        "con" -> "Presenta"
-        else -> valor
-    }
-}
-
-
-
 

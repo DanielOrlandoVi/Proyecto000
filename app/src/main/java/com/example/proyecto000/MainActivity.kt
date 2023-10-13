@@ -434,16 +434,21 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
 
 
     fun guardaryactualizar(view: View) {
-        val canDialogFragment = CantidadPisosDialogFragment()
-        canDialogFragment.cantidadPisosListener= this
-        canDialogFragment.show(supportFragmentManager,"Indica la cantidad de pisos del predio")
+
+        val formCalles = FormularioCalle()
+        formCalles.show(supportFragmentManager, "Formulario Calle")
+
+
+        //val canDialogFragment = CantidadPisosDialogFragment()
+        //canDialogFragment.cantidadPisosListener= this
+        //canDialogFragment.show(supportFragmentManager,"Indica la cantidad de pisos del predio")
     }
 
     var aux =""
     override fun onDatosPisosConfirmados(datoPisos: String) {
         var descripcion = findViewById<EditText>(R.id.txtDescripcion)
          aux = aux+" "+datoPisos
-        descripcion.setText("Se realiza acta de vencidad ubicado en predio ubicado en la direccion ${txtDireccionpredio.text} en el barrio ${txtBarrio?.text} el cual se encuentra en el siguiente estado: "+aux)
+        descripcion.setText("Se realiza acta de vencidad ubicado en predio ubicado en la direccion ${txtDireccionpredio.text} en el barrio ${txtBarrio?.text} el cual se encuentra en el siguiente estado: "+aux.lowercase())
 
     }
 
