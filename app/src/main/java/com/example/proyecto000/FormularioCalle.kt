@@ -18,9 +18,7 @@ class FormularioCalle() : DialogFragment() {
 
     var FormularioCallesListener: FormularioCalleListener? = null
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        var paso =""
         val builder = AlertDialog.Builder(requireActivity())
-        var Texto_generado = ""
         // Crear el ScrollView
         val scrollView = ScrollView(requireContext())
         val layoutParams = LinearLayout.LayoutParams(
@@ -371,22 +369,36 @@ class FormularioCalle() : DialogFragment() {
         spinnerAdapter_aux2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner_aux2.adapter = spinnerAdapter_aux2
         linearLayout.addView(spinner_aux2)
-
-
-// Crea el Spinner 17
-        //val Titulo_5 = TextView(requireContext())
-        //Titulo_5.text = "Se evidencia zona de porteria en fachada tipo " // Puedes personalizar el texto del título
-        //linearLayout.addView(Titulo_5)
-        //val spinner17 = Spinner(requireContext())
-        //val spinnerArray17 = opciones17 // Define las opciones del Spinner 17
-        //val spinnerAdapter17 = ArrayAdapter(requireContext(), R.layout.simple_spinner_item, spinnerArray17)
-        //spinnerAdapter17.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        //spinner17.adapter = spinnerAdapter17
-        //linearLayout.addView(spinner17)
         scrollView.addView(linearLayout)
         // Agregar el ScrollView al AlertDialog
+
+
+
+
         builder.setView(scrollView)
+
+
+
+
         builder.setPositiveButton("Guardar") { dialog, _ ->
+            val valorSpinner1 = reemplazarValor(spinner1.selectedItem.toString())
+            val valorSpinner2 = reemplazarValor(spinner2.selectedItem.toString())
+            val valorSpinner4 = reemplazarValor(spinner4.selectedItem.toString())
+            val valorSpinner5 = reemplazarValor(spinner5.selectedItem.toString())
+            val valorSpinner7 = reemplazarValor(spinner7.selectedItem.toString())
+            val valorSpinner9 = reemplazarValor(spinner9.selectedItem.toString())
+            val Envio_Texto = "Presenta cercamiento de tipo $valorSpinner1 la cual su estado es $valorSpinner2; " +
+                    "El anden con zonas de $valorSpinner4 el cual esta $valorSpinner5 al igual que el sardinel,el estado general del anden es $valorSpinner7," +
+                    "algunas secciones del anden presentan condiciones de $valorSpinner9,  "
+
+
+             FormularioCallesListener?.Gemerar(Envio_Texto)
+
+
+
+
+
+
         }
 
         return builder.create()
@@ -394,7 +406,7 @@ class FormularioCalle() : DialogFragment() {
 }
 
 interface FormularioCalleListener {
-    fun onDatosPisosConfirmados(datoPisos: String)
+    fun Gemerar(Texto :String)
 }
 
 class FormularioCalles : DialogFragment() {

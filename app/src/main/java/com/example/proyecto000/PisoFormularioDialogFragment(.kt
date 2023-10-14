@@ -20,7 +20,6 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
 
     var pisosFormularioListener: PisosFormularioListener? = null
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        var paso =""
         val builder = AlertDialog.Builder(requireActivity())
         var Texto_generado = ""
         // Crear el ScrollView
@@ -326,17 +325,26 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
                 val valorSpinner3 = reemplazarValor(spinner3.selectedItem.toString())
                 val valorSpinner4 = reemplazarValor(spinner4.selectedItem.toString())
                 val valorSpinner5 = reemplazarValor(spinner5.selectedItem.toString())
-                val valorSpinner6 = reemplazarValor(spinner1.selectedItem.toString())
-                val valorSpinner7 = reemplazarValor(spinner2.selectedItem.toString())
-                val valorSpinner8 = reemplazarValor(spinner3.selectedItem.toString())
-                val valorSpinner9 = reemplazarValor(spinner4.selectedItem.toString())
-                val valorSpinner10 = reemplazarValor(spinner5.selectedItem.toString())
+                val valorSpinner6 = reemplazarValor(spinner6.selectedItem.toString())
+                val valorSpinner7 = reemplazarValor(spinner7.selectedItem.toString())
+                val valorSpinner8 = reemplazarValor(spinner8.selectedItem.toString())
+                val valorSpinner9 = reemplazarValor(spinner9.selectedItem.toString())
+                val valorSpinner10 = reemplazarValor(spinner10.selectedItem.toString())
+
+
+
             }
 
         }
 
+
+
         return builder.create()
     }
+
+
+
+
 }
 
 interface PisosFormularioListener {

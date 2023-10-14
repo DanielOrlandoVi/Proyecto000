@@ -21,7 +21,7 @@ import androidx.fragment.app.FragmentManager
 import java.io.File
 
 
-class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosListener {
+class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosListener,FormularioCalleListener {
 
 
 
@@ -436,15 +436,17 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
     fun guardaryactualizar(view: View) {
 
         val formCalles = FormularioCalle()
+        formCalles.FormularioCallesListener = this
         formCalles.show(supportFragmentManager, "Formulario Calle")
 
 
-        //val canDialogFragment = CantidadPisosDialogFragment()
-        //canDialogFragment.cantidadPisosListener= this
-        //canDialogFragment.show(supportFragmentManager,"Indica la cantidad de pisos del predio")
+        val canDialogFragment = CantidadPisosDialogFragment()
+        canDialogFragment.cantidadPisosListener= this
+        canDialogFragment.show(supportFragmentManager,"Indica la cantidad de pisos del predio")
     }
 
     var aux =""
+
     override fun onDatosPisosConfirmados(datoPisos: String) {
         var descripcion = findViewById<EditText>(R.id.txtDescripcion)
          aux = aux+" "+datoPisos
@@ -466,6 +468,13 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
 
             dialogFragment.show(fragmentManager, "formulario_piso_$i")
         }
+
+    }
+
+    override fun Gemerar(Texto: String) {
+        var descripcion = findViewById<EditText>(R.id.txtDescripcion)
+        var texto = descripcion.text.toString()
+        descripcion.setText(texto+Texto)
     }
 
 
@@ -478,3 +487,5 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
     * 2.Función actualizar con set Text y $fecha $localidad y unirlo con boton
     * */
 }
+
+
