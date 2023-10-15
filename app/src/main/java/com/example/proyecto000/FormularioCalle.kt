@@ -372,13 +372,7 @@ class FormularioCalle() : DialogFragment() {
         scrollView.addView(linearLayout)
         // Agregar el ScrollView al AlertDialog
 
-
-
-
         builder.setView(scrollView)
-
-
-
 
         builder.setPositiveButton("Guardar") { dialog, _ ->
             val valorSpinner1 = reemplazarValor(spinner1.selectedItem.toString())
@@ -387,17 +381,43 @@ class FormularioCalle() : DialogFragment() {
             val valorSpinner5 = reemplazarValor(spinner5.selectedItem.toString())
             val valorSpinner7 = reemplazarValor(spinner7.selectedItem.toString())
             val valorSpinner9 = reemplazarValor(spinner9.selectedItem.toString())
-            val Envio_Texto = "Presenta cercamiento de tipo $valorSpinner1 la cual su estado es $valorSpinner2; " +
+            val valorSpinner10 = reemplazarValor(spinner10.selectedItem.toString())
+            val valorSpinner11 = reemplazarValor(spinner11.selectedItem.toString())
+            val valorSpinner12 = reemplazarValor(spinner12.selectedItem.toString())
+            val valorSpinner13 = reemplazarValor(spinner12.selectedItem.toString())
+            val valorSpinner14 = reemplazarValor(spinner12.selectedItem.toString())
+            val Envio_Texto = "${if (valorSpinner1 == "No presenta") {
+                    "No presemta cerramiento "
+                } else {
+                    "Presenta cerramiento de tipo $valorSpinner1"+"la cual su estado es $valorSpinner2; " +
                     "El anden con zonas de $valorSpinner4 el cual esta $valorSpinner5 al igual que el sardinel,el estado general del anden es $valorSpinner7," +
-                    "algunas secciones del anden presentan condiciones de $valorSpinner9,  "
+                            " ${if (valorSpinner9.equals("No presenta")){
+                                ""
+                            }else{
+                                "algunas secciones del anden presentan condiciones de $valorSpinner9"+ "${if (valorSpinner10.equals("No presenta")){ 
+                                    "No se evidencia en el anden elementos urbanisticos"} 
+                                else {
+                                    "Se evidencian elementos urbanisticos tales como $valorSpinner10"
+                                }
+                                }"
+                            } 
+                }"
+            } }${if(valorSpinner11.equals("No presenta")){
+                ""
+            }else {
+                "Se evidencia la presencia de $valorSpinner11, las plantas evidenciadas fueron encontradas en condiciones $valorSpinner12  "
+            } } ${if(valorSpinner13.equals("No presenta")){
+                "No se encuentra presencia de elementos arboreos"
+            }else{
+                "Se evidencia la presencia de elementos arboreos en condicion $valorSpinner13"
+            }}${if(valorSpinner14.equals("")){
+                
+            }else{
+                
+            }}  "//fIN TEXTO
 
 
-             FormularioCallesListener?.Gemerar(Envio_Texto)
-
-
-
-
-
+            FormularioCallesListener?.Gemerar(Envio_Texto)
 
         }
 
