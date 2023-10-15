@@ -410,10 +410,10 @@ class FormularioCalle() : DialogFragment() {
                 "No se encuentra presencia de elementos arboreos"
             }else{
                 "Se evidencia la presencia de elementos arboreos en condicion $valorSpinner13"
-            }}${if(valorSpinner14.equals("")){
-                
+            }}${if(valorSpinner14.equals("No presenta")){
+                "No cuenta con acceso vehicular"
             }else{
-                
+                "Cuenta con acceso vehicular"
             }}  "//fIN TEXTO
 
 
