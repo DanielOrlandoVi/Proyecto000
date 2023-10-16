@@ -314,7 +314,7 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
                }else{
 
 
-                  Texto_generado= "En el piso ${numeroPiso.toString()} $valorSpinner1 balcon, con ventanas frabicadas en $valorSpinner2"
+                  Texto_generado= "En el piso ${numeroPiso.toString()} $"
                }
 
                 pisosFormularioListener?.onDatosPisosConfirmados(Texto_generado)

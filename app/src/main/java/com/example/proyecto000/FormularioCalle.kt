@@ -384,7 +384,7 @@ class FormularioCalle() : DialogFragment() {
             val valorSpinner10 = reemplazarValor(spinner10.selectedItem.toString())
             val valorSpinner11 = reemplazarValor(spinner11.selectedItem.toString())
             val valorSpinner12 = reemplazarValor(spinner12.selectedItem.toString())
-            val valorSpinner13 = reemplazarValor(spinner13.selectedItem.toString())
+            val valorSpinner13 = reemplazarValor(spinner_13.selectedItem.toString())
             val valorSpinner14 = reemplazarValor(spinner14.selectedItem.toString())
             val valorSpinner15 = reemplazarValor(spinner15.selectedItem.toString())
             val valorSpinner16 = reemplazarValor(spinner16.selectedItem.toString())
@@ -392,43 +392,43 @@ class FormularioCalle() : DialogFragment() {
             val valorSpinner18 = reemplazarValor(spinner_aux2.selectedItem.toString())
 
             val Envio_Texto = "${if (valorSpinner1 == "No presenta") {
-                    "No presemta cerramiento "
-                } else {
-                    "Presenta cerramiento de tipo $valorSpinner1"+"la cual su estado es $valorSpinner2; " +
-                    "El anden con zonas de $valorSpinner4 el cual esta $valorSpinner5 al igual que el sardinel,el estado general del anden es $valorSpinner7," +
-                            " ${if (valorSpinner9.equals("No presenta")){
-                                ""
-                            }else{
-                                "algunas secciones del anden presentan condiciones de $valorSpinner9"+ "${if (valorSpinner10.equals("No presenta")){ 
-                                    "No se evidencia en el anden elementos urbanisticos"} 
-                                else {
-                                    "Se evidencian elementos urbanisticos tales como $valorSpinner10"
-                                }
-                                }"
-                            } 
-                }"
-            } }${if(valorSpinner11.equals("No presenta")){
+                "No presenta cerramiento"
+            } else {
+                "Presenta cerramiento de tipo $valorSpinner1, cuyo estado es $valorSpinner2; " +
+                        "El andén con zonas de $valorSpinner4, el cual está $valorSpinner5 al igual que el sardinel, su estado general es $valorSpinner7" +
+                        "${if (valorSpinner9 == "No presenta") {
+                            ""
+                        } else {
+                            ". Algunas secciones del andén presentan condiciones de $valorSpinner9" +
+                                    "${if (valorSpinner10 == "No presenta") {
+                                        ". No se evidencian elementos urbanísticos."
+                                    } else {
+                                        ". Se evidencian elementos urbanísticos tales como $valorSpinner10."
+                                    }}"
+                        }}"
+            }}${if (valorSpinner11 == "No presenta") {
                 ""
-            }else {
-                "Se evidencia la presencia de $valorSpinner11, las plantas evidenciadas fueron encontradas en condiciones $valorSpinner12  "
-            } } ${if(valorSpinner13.equals("No presenta")){
-                "No se encuentra presencia de elementos arboreos"
-            }else{
-                "Se evidencia la presencia de elementos arboreos en condicion $valorSpinner13"
-            }}${if(valorSpinner14.equals("No presenta")){
-                "No cuenta con acceso vehicular"
-            }else{
-                "Cuenta con acceso vehicular"
-            }}${if(valorSpinner15.equals("No  presenta")){
+            } else {
+                ". Se evidencia la presencia de $valorSpinner11. Las plantas evidenciadas fueron encontradas en condiciones $valorSpinner12."
+            }}${if (valorSpinner13 == "No presenta") {
+                ". No se encuentra presencia de elementos arbóreos"
+            } else {
+                ". Se evidencia la presencia de elementos arbóreos en condición $valorSpinner13."
+            }}${if (valorSpinner14 == "No presenta") {
+                ". No cuenta con acceso vehicular"
+            } else {
+                ". Cuenta con acceso vehicular"
+            }}${if (valorSpinner15 == "No presenta") {
                 ""
-            }else{
-                "Cuenta con rampa de acceso vehicular, la cual su estado es $valorSpinner16, su sardinel presenta las condiciones $valorSpinner17 ${if(valorSpinner18.equals("No presenta")){
-                    "No cuenta con varanda de acceso"
-                    
-                }else{
-                    "el estado de la varanda de acceso es $valorSpinner18"
-                }} "
-            }} "//fIN TEXTO
+            } else {
+                ". Cuenta con rampa de acceso vehicular, cuyo estado es $valorSpinner16. Su sardinel presenta las condiciones $valorSpinner17." +
+                        "${if (valorSpinner18 == "No presenta") {
+                            " No cuenta con veranda de acceso."
+                        } else {
+                            " El estado de la veranda de acceso es $valorSpinner18."
+                        }}"
+            }}"
+
 
 
             FormularioCallesListener?.Gemerar(Envio_Texto)
