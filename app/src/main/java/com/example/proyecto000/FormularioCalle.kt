@@ -384,8 +384,13 @@ class FormularioCalle() : DialogFragment() {
             val valorSpinner10 = reemplazarValor(spinner10.selectedItem.toString())
             val valorSpinner11 = reemplazarValor(spinner11.selectedItem.toString())
             val valorSpinner12 = reemplazarValor(spinner12.selectedItem.toString())
-            val valorSpinner13 = reemplazarValor(spinner12.selectedItem.toString())
-            val valorSpinner14 = reemplazarValor(spinner12.selectedItem.toString())
+            val valorSpinner13 = reemplazarValor(spinner13.selectedItem.toString())
+            val valorSpinner14 = reemplazarValor(spinner14.selectedItem.toString())
+            val valorSpinner15 = reemplazarValor(spinner15.selectedItem.toString())
+            val valorSpinner16 = reemplazarValor(spinner16.selectedItem.toString())
+            val valorSpinner17 = reemplazarValor(spinner_aux1.selectedItem.toString())
+            val valorSpinner18 = reemplazarValor(spinner_aux2.selectedItem.toString())
+
             val Envio_Texto = "${if (valorSpinner1 == "No presenta") {
                     "No presemta cerramiento "
                 } else {
@@ -414,7 +419,16 @@ class FormularioCalle() : DialogFragment() {
                 "No cuenta con acceso vehicular"
             }else{
                 "Cuenta con acceso vehicular"
-            }}  "//fIN TEXTO
+            }}${if(valorSpinner15.equals("No  presenta")){
+                ""
+            }else{
+                "Cuenta con rampa de acceso vehicular, la cual su estado es $valorSpinner16, su sardinel presenta las condiciones $valorSpinner17 ${if(valorSpinner18.equals("No presenta")){
+                    "No cuenta con varanda de acceso"
+                    
+                }else{
+                    "el estado de la varanda de acceso es $valorSpinner18"
+                }} "
+            }} "//fIN TEXTO
 
 
             FormularioCallesListener?.Gemerar(Envio_Texto)
