@@ -178,7 +178,7 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
 
             //Spinner 7
             val Venta_Material = TextView(requireContext())
-            Venta_Material.text = "Material" // Puedes personalizar el texto del título
+            Venta_Material.text = "Estado " // Puedes personalizar el texto del título
             linearLayout.addView(Venta_Material)
             val spinnerArray7 = opciones7 // Define las opciones del Spinner
             val spinnerAdapter7 =
@@ -314,7 +314,27 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
                }else{
 
 
-                  Texto_generado= "En el piso ${numeroPiso.toString()} $"
+                  Texto_generado= "En el piso $numeroPiso  ${if(valorSpinner1.equals("No presenta")){
+                      ""
+                  }else{
+                      " se observa balcon"
+                  }}${if(valorSpinner2.equals("No presenta")){
+                      ""
+                  }else{
+                     "  cuenta con ventanas fabricadas en $valorSpinner2" 
+                  }}${if(valorSpinner3.equals("No presenta")){
+                      ""
+                  }else{
+                      " el estado de las ventanas es  $valorSpinner3"
+                  }}${if(valorSpinner4.equals("No presenta")){
+                      ""
+                  }else{
+                      " el estado del vidrio es  $valorSpinner4"
+                  }}${if(valorSpinner5.equals("No presenta")){
+                      ""
+                  }else{
+                     "Se observa terraza" 
+                  }}  "
                }
 
                 pisosFormularioListener?.onDatosPisosConfirmados(Texto_generado)
