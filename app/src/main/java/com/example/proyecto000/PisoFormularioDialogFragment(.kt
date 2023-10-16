@@ -35,6 +35,7 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
         linearLayout.layoutParams = layoutParams
 
         builder.setTitle("Formulario para Piso $numeroPiso")
+
         val spinner1 = Spinner(requireContext())
         val spinner2 = Spinner(requireContext())
         val spinner3 = Spinner(requireContext())
@@ -46,15 +47,16 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
         val spinner9 = Spinner(requireContext())
         val spinner10 = Spinner(requireContext())
         val spinner11 = Spinner(requireContext())
+        val colorEditText: EditText
         val opciones1 = arrayOf(
-            "1.Residencial",
-            "2.Comercial",
-            "3.Industrial",
-            "4.institucional",
-            "5.Recreacional",
-            "7.Bien de interés cultural",
-            "8.Mixto",
-            "9.Otro?"
+            "Residencial",
+            "Comercial",
+            "Industrial",
+            "institucional",
+            "Recreacional",
+            "Bien de interés cultural",
+            "Mixto",
+            "Otro?"
         )
         val opciones2 = arrayOf(
             "Ladrillo Prensado",
@@ -77,10 +79,9 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
         //Opciones para los pisos
         val opciones5 = arrayOf("Peatonal", "Vehicular", "Peatonal y Vehicular")
         val opciones6 = arrayOf("Metal", "Madera", "Maciso", "Seguridad", "Reja")
-        val opciones7 = arrayOf("N/A", "Metal", "Madera")
         val opciones8 = arrayOf("N/A", "Buen Estado", "Vencido", "Roto")
         val opciones9 = arrayOf("N/A", "En concreto", "En madera")
-        val opciones10 = arrayOf("N/A", "En material metalico", "Tubo pvc", "rejilla")
+        val opciones10 = arrayOf("N/A", "material metalico", "Tubo pvc", "rejilla")
 
 
         //Pisos Formulario
@@ -91,10 +92,13 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
         val opciones_4 = arrayOf("N/A", "Buen Estado", "Vencido", "Roto")
         val opciones_5 = arrayOf("N/A", "Si")
 
+
+
         //Fin opciones pisos
 
 
         if (numeroPiso == 1) {
+
             val titulo_Tipodeuso = TextView(requireContext())
             titulo_Tipodeuso.text = "Tipo de uso" // Puedes personalizar el texto del título
             linearLayout.addView(titulo_Tipodeuso)
@@ -163,24 +167,11 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
             spinner6.adapter = spinnerAdapter6
             linearLayout.addView(spinner6)
             //Fin spinner 6
-
-            //Color inicio
-            // Título para el campo de color
-            val colorTitle = TextView(requireContext())
-            colorTitle.text = "Color" // Puedes personalizar el texto del título
-            linearLayout.addView(colorTitle)
-
-            // EditText para ingresar el color
-            val colorEditText = EditText(requireContext())
-            colorEditText.hint = "Ingrese un color" // Puedes personalizar el texto de sugerencia
-            linearLayout.addView(colorEditText)
-            //Color Final
-
             //Spinner 7
             val Venta_Material = TextView(requireContext())
             Venta_Material.text = "Estado " // Puedes personalizar el texto del título
             linearLayout.addView(Venta_Material)
-            val spinnerArray7 = opciones7 // Define las opciones del Spinner
+            val spinnerArray7 = opciones3 // Define las opciones del Spinner
             val spinnerAdapter7 =
                 ArrayAdapter(requireContext(), R.layout.simple_spinner_item, spinnerArray7)
             spinnerAdapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -296,6 +287,8 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
 
         builder.setPositiveButton("Guardar") { dialog, _ ->
 
+
+
             if (numeroPiso > 1) {
 
                 val valorSpinner1 = reemplazarValor(spinner1.selectedItem.toString())
@@ -333,7 +326,7 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
                   }}${if(valorSpinner5.equals("No presenta")){
                       ""
                   }else{
-                     "Se observa terraza" 
+                     " Se observa terraza" 
                   }}  "
                }
 
@@ -351,10 +344,30 @@ class PisoFormularioDialogFragment(private val numeroPiso: Int) : DialogFragment
                 val valorSpinner9 = reemplazarValor(spinner9.selectedItem.toString())
                 val valorSpinner10 = reemplazarValor(spinner10.selectedItem.toString())
 
-
-
+                Texto_generado = buildString {
+        append("El piso 1 es de uso $valorSpinner1, presenta una fachada de tipo $valorSpinner2 y su estado es $valorSpinner3 ")
+        append(
+            "${if(valorSpinner4.equals("No presenta")){
+                " la cual no presenta ninguna desgaste"
+            }else{
+                "la cual presenta $valorSpinner4"
+            }} sus puertas de acceso son de tipo $valorSpinner5, el material de la puerta es $valorSpinner6, el estado de la puerta es $valorSpinner6, de igual forma se aprecia que el estado de sus ventanas es $valorSpinner7" +
+                    "${if(valorSpinner8.equals("No presenta")){
+                        ""
+                    }else{
+                        " se aprecia que el estado de los vidirios es $valorSpinner8"
+                    }}${if(valorSpinner9.equals("No presenta")){
+                        ""
+                    }else{
+                        " se aprecia columnas elaboradas  $valorSpinner9"
+                    }}${if(valorSpinner10.equals("No presenta")){
+                        ""
+                    }else{
+                        " se aprecia ductos de ventilacion en  $valorSpinner10"
+                    }}"
+        )
+    }
             }
-
         }
 
 
