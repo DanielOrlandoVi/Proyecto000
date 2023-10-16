@@ -46,6 +46,9 @@ class PdfActivity : AppCompatActivity() {
         val ur2 = intent.getStringExtra("Ur2")
         val ur3 = intent.getStringExtra("Ur3")
         val localidad = intent.getStringExtra("Localidad")
+        val textogenerado= intent.getStringExtra("Texto_Generado")
+        val otrouso = intent.getStringExtra("otro_uso")
+
         //Variables Booleanos
         val checkAgua = intent.getBooleanExtra("check_Agua", false)
         val checkAlcantarillado = intent.getBooleanExtra("check_Alcantarillado", false)
@@ -107,8 +110,16 @@ class PdfActivity : AppCompatActivity() {
         val Localidad: TextView = findViewById(R.id.EditPDFLocalidad)
         Localidad.setText(localidad)
 
+        val texto: TextView =findViewById(R.id.EditPDFDescripcionPredio)
+        texto.setText(textogenerado)
+
         val NombreProp : TextView = findViewById(R.id.EditPDFNombrePropietarioFirma)
         NombreProp.setText(nombrePropietario)
+
+        val Otro_uso :TextView=findViewById(R.id.EditPDFCual)
+        Otro_uso.setText(otrouso)
+
+
         //Fin textos
 
         //Inicio CheckBox
@@ -130,6 +141,7 @@ class PdfActivity : AppCompatActivity() {
         val boxOtrouso: CheckBox = findViewById(R.id.CheckBoxOtro)
 
 
+
 // CheckBoxes para uso vehicular
         val boxGaraje: CheckBox = findViewById(R.id.CheckBoxGaraje)
         val boxUsocomercial: CheckBox = findViewById(R.id.CheckBoxUsoComercial)
@@ -139,6 +151,8 @@ class PdfActivity : AppCompatActivity() {
         val boxTelefonos_no: CheckBox = findViewById(R.id.CheckBoxNOTelefonos)
         val boxGas_no: CheckBox = findViewById(R.id.CheckBoxNOGas)
         val boxTics_no: CheckBox = findViewById(R.id.CheckBoxNOTics)
+        val boxli_si: CheckBox = findViewById(R.id.CheckBoxSILicConstruccion)
+        val boxli_no: CheckBox = findViewById(R.id.CheckBoxNOLicConstruccion)
 
 
 
@@ -191,6 +205,14 @@ class PdfActivity : AppCompatActivity() {
         } else {
             boxTics_no.isChecked = true
             boxTics.isChecked = false
+        }
+        if(checkLconstruccion){
+         boxli_si.isChecked = true
+         boxli_no.isChecked=false
+
+        }else{
+            boxli_si.isChecked = false
+            boxli_no.isChecked= true
         }
 
 

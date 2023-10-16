@@ -32,6 +32,8 @@ class FirmActivity : AppCompatActivity() {
         val id = intent.getStringExtra("ID")
         val nombrePropietario = intent.getStringExtra("Nombre_Propietario")
         val telefonoPredio = intent.getStringExtra("Telefono_Predio")
+        val otrouso = intent.getStringExtra("otro_uso")
+
         val ur1 = intent.getStringExtra("Ur1")
         val ur2 = intent.getStringExtra("Ur2")
         val ur3 = intent.getStringExtra("Ur3")
@@ -56,6 +58,7 @@ class FirmActivity : AppCompatActivity() {
         val checkGaraje = intent.getBooleanExtra("check_Garaje", false)
         val checkUsocomercial = intent.getBooleanExtra("check_Usocomercial", false)
 
+        val textogenerado= intent.getStringExtra("Texto_Generado")
 
 
 
@@ -115,6 +118,8 @@ class FirmActivity : AppCompatActivity() {
                 intent.putExtra("Ruta_PDF",Ruta)
                 intent.putExtra("Nombre_PDF",Pdf_Name)
                 intent.putExtra("URI_firma",file.name)
+                intent.putExtra("Texto_Generado",textogenerado)
+                intent.putExtra("otro_uso",otrouso)
 
                 //Booleanos
 

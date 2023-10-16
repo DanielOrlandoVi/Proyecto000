@@ -386,6 +386,7 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
             intent.putExtra("ID",txtIDdiseno.text.toString() )
             intent.putExtra("Nombre_Propietario",txtPropietariopredio?.text.toString() )
             intent.putExtra("Telefono_Predio", txtTelefonopredio?.text.toString())
+            intent.putExtra("otro_uso", txtOtrouso?.text.toString())
             intent.putExtra("Ur1",selectedUr1.toString())
             intent.putExtra("Ur2",selectedUr2.toString())
             intent.putExtra("Ur3",selectedUr3.toString())
@@ -410,6 +411,7 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
 
             intent.putExtra("check_Garaje", estGaraje.isChecked)
             intent.putExtra("check_Usocomercial", estUsocomercial.isChecked)
+            intent.putExtra("Texto_Generado",txtDescripcion?.text.toString())
 
 
 
