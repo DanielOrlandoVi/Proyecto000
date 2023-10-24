@@ -69,12 +69,13 @@
                     android:id="@+id/ViewPDFDireccionContratistas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="-1dp"
                     android:background="@drawable/border"
                     android:fontFamily="@font/noto_sans"
+                    android:gravity="center"
                     android:text="Carrera 20 # 137 - 56 - Usaquén - Bogota D.C."
                     android:textSize="4sp"
-                    android:textStyle="bold"
-                    android:gravity="center"/>
+                    android:textStyle="bold" />
 
                 <!--contratista interventoria-->
 
@@ -109,7 +110,7 @@
                         <!--union temporal y logo señalvias-->
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="44dp"
+                            android:layout_height="30dp"
                             android:orientation="horizontal">
 
 
@@ -126,7 +127,8 @@
                                     android:layout_marginLeft="2dp"
                                     android:fontFamily="@font/noto_sans"
                                     android:text="UNIÓN TEMPORAL SEÑALIZANDO ZONA NORTE"
-                                    android:textSize="4sp" />
+                                    android:textSize="3sp"
+                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:id="@+id/ViewPDFtxtLogoIcovias2"
@@ -134,7 +136,8 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/noto_sans"
                                     android:text="CONTRATO NÚMERO 2021- 2569"
-                                    android:textSize="4sp" />
+                                    android:textSize="3sp"
+                                    android:textStyle="bold" />
                             </LinearLayout>
 
                             <!--columna logo señalvias-->
@@ -146,7 +149,7 @@
                                 <ImageView
                                     android:id="@+id/ViewPDFLogoIcovias"
                                     android:layout_width="match_parent"
-                                    android:layout_height="35dp"
+                                    android:layout_height="30dp"
                                     android:layout_marginRight="4dp"
                                     android:layout_marginBottom="2dp"
                                     android:src="@drawable/uniontemporalsenalizando" />
@@ -159,7 +162,7 @@
 
                     <!--columna interventoria-->
                     <LinearLayout
-                        android:layout_width="172dp"
+                        android:layout_width="173dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="-1dp"
                         android:layout_marginRight="-1dp"
@@ -180,7 +183,7 @@
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="36dp"
+                            android:layout_height="25dp"
                             android:orientation="horizontal">
 
                             <!--columna nombre interventoria-->
@@ -203,7 +206,7 @@
                             <!--columna logo interventoria-->
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:orientation="vertical">
 
                                 <ImageView
@@ -425,7 +428,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-1dp"
+                    android:layout_marginTop="-2dp"
                     android:layout_marginBottom="-1dp"
                     android:background="@drawable/border"
                     android:orientation="horizontal">
@@ -756,7 +759,7 @@
                             android:id="@+id/ViewPDFtxtObservaciones"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="-1dp"
+                            android:layout_marginLeft="-2dp"
                             android:background="@drawable/border"
                             android:fontFamily="@font/noto_sans"
                             android:gravity="center"
@@ -1022,7 +1025,7 @@
 
                     <LinearLayout
                         android:layout_width="59dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:background="@drawable/border"
                         android:orientation="vertical">
 
@@ -1204,6 +1207,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-2dp"
+                    android:layout_marginBottom="-1dp"
                     android:background="@drawable/border"
                     android:text="   3. DESCRIPCIÓN Y ESTADO DEL PREDIO ANTES DE INTERVENIR EL ESPACIO PÚBLICO"
                     android:textSize="6sp"
@@ -1290,7 +1294,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
-                android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos,    vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a fecha de: "
+                android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos, vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a fecha del día_______mes________________del año________________"
                 android:textSize="6sp" />
 
             <!-- layout firmas 1 y 2 -->
