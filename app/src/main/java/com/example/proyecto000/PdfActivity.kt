@@ -95,6 +95,10 @@ class PdfActivity : AppCompatActivity() {
         //Inicio Textos
         val  Fecha : TextView = findViewById( R.id.EditPDFFecha)
         Fecha.setText(fecha)
+        val Texto_fecha: TextView = findViewById(R.id.ViewPDFFechaLlenado)
+        var textoFinal = Texto_fecha.text.toString()
+        textoFinal= textoFinal+fecha
+        Texto_fecha.setText(textoFinal)
         val Barrio : TextView = findViewById(R.id.EditPDFBarrio)
         Barrio.setText(barrio)
         val Correo : TextView = findViewById(R.id.EditPDFCorreo)
@@ -314,29 +318,41 @@ class PdfActivity : AppCompatActivity() {
             val canvas = Canvas(screenshot)
             contentView.draw(canvas)
 
-            // Escala el bitmap capturado al tamaño de oficio
+// Escala el bitmap capturado al tamaño de oficio
             val oficioWidth = 5100 // Ancho en puntos
-            val oficioHeight = 8400// Alto en puntos (8.5 x 72)
+            val oficioHeight = 8400 // Alto en puntos (8.5 x 72)
 
             val scaleX = oficioWidth.toFloat() / screenshot.width
             val scaleY = oficioHeight.toFloat() / screenshot.height
             val scale = min(scaleX, scaleY)
-            val scaledScreenshot = Bitmap.createScaledBitmap(screenshot, (screenshot.width * scale).toInt(), (screenshot.height * scale).toInt(), false)
+            val scaledScreenshot = Bitmap.createScaledBitmap(
+                screenshot,
+                (screenshot.width * scale).toInt(),
+                (screenshot.height * scale).toInt(),
+                false
+            )
 
-            // Crea el documento PDF
+// Crea el documento PDF
             val pdfDocument = PdfDocument()
             val pageInfo = PdfDocument.PageInfo.Builder(
-                oficioWidth, oficioHeight, 1
+                oficioWidth,
+                oficioHeight,
+                1
             ).create()
 
             val page = pdfDocument.startPage(pageInfo)
             val pdfCanvas: Canvas = page.canvas
 
+// Configura la calidad de la imagen
+            pdfCanvas.setDensity(440) // Ajusta este valor según tus necesidades
+
             pdfCanvas.drawBitmap(scaledScreenshot, 0f, 0f, null)
             pdfDocument.finishPage(page)
 
+// Resto de tu código...
+
             // Directorio y archivo PDF
-            val pdfDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), ruta)
+            val pdfDirectory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), ruta)
             pdfDirectory.mkdirs()
 
 
@@ -350,7 +366,10 @@ class PdfActivity : AppCompatActivity() {
                 e.printStackTrace()
             }
 
+
+
             pdfDocument.close()
+
 
             button.visibility = View.VISIBLE
             // Una vez creado el PDF, puedes obtener la ruta

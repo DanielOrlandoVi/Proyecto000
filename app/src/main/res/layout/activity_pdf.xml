@@ -41,6 +41,7 @@
                     android:fontFamily="@font/noto_sans"
                     android:text="FORMATO ACTA DE VECINDAD"
                     android:textSize="4sp"
+                    android:gravity="center"
                     android:textStyle="bold" />
 
                 <TextView
@@ -49,7 +50,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/noto_sans"
                     android:text="CONTRATO NÚMERO 2021-2012"
-                    android:textSize="5sp" />
+                    android:textSize="5sp"
+                    android:gravity="center" />
+
 
                 <TextView
                     android:id="@+id/ViewPDFUnion"
@@ -59,7 +62,8 @@
                     android:fontFamily="@font/noto_sans"
                     android:text="UNIÓN TEMPORAL SEÑALIZANDO ZONA NORTE"
                     android:textSize="4sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:gravity="center"/>
 
                 <TextView
                     android:id="@+id/ViewPDFDireccionContratistas"
@@ -69,7 +73,8 @@
                     android:fontFamily="@font/noto_sans"
                     android:text="Carrera 20 # 137 - 56 - Usaquén - Bogota D.C."
                     android:textSize="4sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:gravity="center"/>
 
                 <!--contratista interventoria-->
 
@@ -1213,7 +1218,7 @@
                     android:background="@drawable/border"
                     android:ems="10"
                     android:inputType="textMultiLine"
-                    android:textSize="4sp" />
+                    android:textSize="6sp" />
 
 
                 <!-- Layout padre horizontal fotos predio-->
@@ -1285,8 +1290,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
-                android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos,    vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a los ____días del mes de __Junio__ de __2022__"
-                android:textSize="4sp" />
+                android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos,    vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a fecha de: "
+                android:textSize="6sp" />
 
             <!-- layout firmas 1 y 2 -->
 
@@ -1445,7 +1450,7 @@
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:text="El uso y distribución del presente formato se realiza para la ejecución de actividades del área social del contrato 2021 - 2659  instaurado entre la Union Temporal Señalizando Zona Norte y la Secretaria Distrital de Movilidad y cuenta con la respectiva revisión y aprobación de la interventoría Soyco BIC SAS."
-                android:textSize="4sp" />
+                android:textSize="6sp" />
 
         </LinearLayout>
 

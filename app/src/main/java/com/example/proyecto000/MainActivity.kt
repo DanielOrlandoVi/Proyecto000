@@ -37,10 +37,6 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
         }else{
             Log.i("aris","no seleccionado")
         }
-
-
-
-
     }
 
 
@@ -348,7 +344,7 @@ class MainActivity : AppCompatActivity(),PisosFormularioListener,CantidadPisosLi
             if (!Nombre_Carpeta.isEmpty()) {
 
                 // Obtener la carpeta correspondiente
-                val directory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), Nombre_Carpeta)
+                val directory = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), Nombre_Carpeta)
 
                 // Verificar si la carpeta ya existe o crearla si no existe
                 if (!directory.exists()) {
