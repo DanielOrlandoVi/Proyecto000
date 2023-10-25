@@ -149,7 +149,7 @@
                                 <ImageView
                                     android:id="@+id/ViewPDFLogoIcovias"
                                     android:layout_width="match_parent"
-                                    android:layout_height="30dp"
+                                    android:layout_height="26dp"
                                     android:layout_marginRight="4dp"
                                     android:layout_marginBottom="2dp"
                                     android:src="@drawable/uniontemporalsenalizando" />
@@ -1289,15 +1289,39 @@
             android:orientation="vertical"
             >
 
-            <TextView
-                android:id="@+id/ViewPDFFechaLlenado"
+            <LinearLayout
+                android:id="@+id/ViewPDFLlenadoRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border"
-                android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos, vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a fecha del día_______mes________________del año________________"
-                android:textSize="6sp" />
+                android:orientation="vertical">
 
-            <!-- layout firmas 1 y 2 -->
+                <TextView
+                    android:id="@+id/ViewPDFFechaLlenado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Para constancia de lo anterior, se firma la presente acta bajo la responsabilidad expresa de los que intervienen en ella, de  conformidad  con las funciones  desempeñadas por cada uno de los mismos, vigente en la fecha del presente periodo de reporte, en Bogotá D.C., a fecha del"
+                    android:textSize="6sp" />
+
+                <!-- layout firmas 1 y 2 -->
+
+                <EditText
+                    android:id="@+id/EditTextFechaLlenado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:ems="10"
+                    android:hint="día_______mes________________del año________________"
+                    android:inputType="text"
+                    android:text="día_______mes________________del año________________"
+                    android:textSize="6sp" />
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
